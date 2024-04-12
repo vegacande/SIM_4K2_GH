@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnIniciar = new Button();
+            SuspendLayout();
+            // 
+            // btnIniciar
+            // 
+            btnIniciar.Location = new Point(394, 527);
+            btnIniciar.Name = "btnIniciar";
+            btnIniciar.Size = new Size(213, 49);
+            btnIniciar.TabIndex = 0;
+            btnIniciar.Text = "Iniciar simulación";
+            btnIniciar.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1035, 700);
+            Controls.Add(btnIniciar);
+            Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Color.Black;
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Inicio";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnIniciar;
     }
 }
