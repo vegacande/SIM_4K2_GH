@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP01_4K2_GH.Formularios
 {
-    public partial class Simulador : Form
+    public partial class Generador : Form
     {
-        public Simulador()
+        public Generador()
         {
             InitializeComponent();
         }
