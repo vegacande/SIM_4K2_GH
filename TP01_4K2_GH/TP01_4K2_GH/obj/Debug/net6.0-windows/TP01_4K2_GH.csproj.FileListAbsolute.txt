@@ -16,3 +16,7 @@ C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\obj\Debug\net6
 C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\obj\Debug\net6.0-windows\TP01_4K2_GH.pdb
 C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\obj\Debug\net6.0-windows\TP01_4K2_GH.genruntimeconfig.cache
 C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\obj\Debug\net6.0-windows\ref\TP01_4K2_GH.dll
+C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\bin\Debug\net6.0-windows\MathNet.Numerics.dll
+C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll
+C:\Users\Mari\Documents\GitHub\SIM_4K2_GH\TP01_4K2_GH\TP01_4K2_GH\obj\Debug\net6.0-windows\TP01_4K2_GH.csproj.CopyComplete

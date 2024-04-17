@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             grillaFrecuencias = new DataGridView();
             intervalo = new DataGridViewTextBoxColumn();
             limInf = new DataGridViewTextBoxColumn();
@@ -43,29 +46,31 @@
             rbNormal = new RadioButton();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            txtB = new MaskedTextBox();
+            txtLambda = new MaskedTextBox();
+            txtMedia = new MaskedTextBox();
+            txtDesv = new MaskedTextBox();
+            txtA = new MaskedTextBox();
+            label6 = new Label();
+            label3 = new Label();
+            label5 = new Label();
+            label2 = new Label();
+            label4 = new Label();
             groupBox3 = new GroupBox();
+            rb23 = new RadioButton();
             rb12 = new RadioButton();
             rb16 = new RadioButton();
             rb10 = new RadioButton();
             txtTamañoMuestra = new MaskedTextBox();
-            rb23 = new RadioButton();
-            label2 = new Label();
-            label3 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            txtA = new MaskedTextBox();
-            txtDesv = new MaskedTextBox();
-            txtMedia = new MaskedTextBox();
-            txtLambda = new MaskedTextBox();
-            txtB = new MaskedTextBox();
             btnLimpiar = new Button();
             btnGenerar = new Button();
+            chartFrecuencia = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaAleatorios).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartFrecuencia).BeginInit();
             SuspendLayout();
             // 
             // grillaFrecuencias
@@ -227,6 +232,99 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos";
             // 
+            // txtB
+            // 
+            txtB.Location = new Point(237, 44);
+            txtB.Mask = "99999";
+            txtB.Name = "txtB";
+            txtB.Size = new Size(107, 28);
+            txtB.TabIndex = 20;
+            txtB.ValidatingType = typeof(int);
+            // 
+            // txtLambda
+            // 
+            txtLambda.Location = new Point(61, 84);
+            txtLambda.Mask = "99999";
+            txtLambda.Name = "txtLambda";
+            txtLambda.Size = new Size(107, 28);
+            txtLambda.TabIndex = 19;
+            txtLambda.ValidatingType = typeof(int);
+            // 
+            // txtMedia
+            // 
+            txtMedia.Location = new Point(61, 123);
+            txtMedia.Mask = "99999";
+            txtMedia.Name = "txtMedia";
+            txtMedia.Size = new Size(107, 28);
+            txtMedia.TabIndex = 18;
+            txtMedia.ValidatingType = typeof(int);
+            // 
+            // txtDesv
+            // 
+            txtDesv.Location = new Point(237, 123);
+            txtDesv.Mask = "99999";
+            txtDesv.Name = "txtDesv";
+            txtDesv.Size = new Size(107, 28);
+            txtDesv.TabIndex = 17;
+            txtDesv.ValidatingType = typeof(int);
+            // 
+            // txtA
+            // 
+            txtA.Location = new Point(61, 44);
+            txtA.Mask = "99999";
+            txtA.Name = "txtA";
+            txtA.Size = new Size(107, 28);
+            txtA.TabIndex = 16;
+            txtA.ValidatingType = typeof(int);
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(34, 86);
+            label6.Name = "label6";
+            label6.Size = new Size(21, 25);
+            label6.TabIndex = 15;
+            label6.Text = "λ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(191, 44);
+            label3.Name = "label3";
+            label3.Size = new Size(23, 24);
+            label3.TabIndex = 8;
+            label3.Text = "B";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(191, 126);
+            label5.Name = "label5";
+            label5.Size = new Size(22, 25);
+            label5.TabIndex = 14;
+            label5.Text = "σ";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(33, 44);
+            label2.Name = "label2";
+            label2.Size = new Size(22, 24);
+            label2.TabIndex = 7;
+            label2.Text = "A";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(31, 126);
+            label4.Name = "label4";
+            label4.Size = new Size(24, 25);
+            label4.TabIndex = 13;
+            label4.Text = "μ";
+            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(rb23);
@@ -239,6 +337,17 @@
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Intervalos";
+            // 
+            // rb23
+            // 
+            rb23.AutoSize = true;
+            rb23.Location = new Point(257, 58);
+            rb23.Name = "rb23";
+            rb23.Size = new Size(51, 28);
+            rb23.TabIndex = 3;
+            rb23.TabStop = true;
+            rb23.Text = "23";
+            rb23.UseVisualStyleBackColor = true;
             // 
             // rb12
             // 
@@ -281,110 +390,6 @@
             txtTamañoMuestra.Size = new Size(125, 28);
             txtTamañoMuestra.TabIndex = 6;
             // 
-            // rb23
-            // 
-            rb23.AutoSize = true;
-            rb23.Location = new Point(257, 58);
-            rb23.Name = "rb23";
-            rb23.Size = new Size(51, 28);
-            rb23.TabIndex = 3;
-            rb23.TabStop = true;
-            rb23.Text = "23";
-            rb23.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(33, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(22, 24);
-            label2.TabIndex = 7;
-            label2.Text = "A";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(191, 44);
-            label3.Name = "label3";
-            label3.Size = new Size(23, 24);
-            label3.TabIndex = 8;
-            label3.Text = "B";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(34, 86);
-            label6.Name = "label6";
-            label6.Size = new Size(21, 25);
-            label6.TabIndex = 15;
-            label6.Text = "λ";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(191, 126);
-            label5.Name = "label5";
-            label5.Size = new Size(22, 25);
-            label5.TabIndex = 14;
-            label5.Text = "σ";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(31, 126);
-            label4.Name = "label4";
-            label4.Size = new Size(24, 25);
-            label4.TabIndex = 13;
-            label4.Text = "μ";
-            // 
-            // txtA
-            // 
-            txtA.Location = new Point(61, 44);
-            txtA.Mask = "99999";
-            txtA.Name = "txtA";
-            txtA.Size = new Size(107, 28);
-            txtA.TabIndex = 16;
-            txtA.ValidatingType = typeof(int);
-            // 
-            // txtDesv
-            // 
-            txtDesv.Location = new Point(237, 123);
-            txtDesv.Mask = "99999";
-            txtDesv.Name = "txtDesv";
-            txtDesv.Size = new Size(107, 28);
-            txtDesv.TabIndex = 17;
-            txtDesv.ValidatingType = typeof(int);
-            // 
-            // txtMedia
-            // 
-            txtMedia.Location = new Point(61, 123);
-            txtMedia.Mask = "99999";
-            txtMedia.Name = "txtMedia";
-            txtMedia.Size = new Size(107, 28);
-            txtMedia.TabIndex = 18;
-            txtMedia.ValidatingType = typeof(int);
-            // 
-            // txtLambda
-            // 
-            txtLambda.Location = new Point(61, 84);
-            txtLambda.Mask = "99999";
-            txtLambda.Name = "txtLambda";
-            txtLambda.Size = new Size(107, 28);
-            txtLambda.TabIndex = 19;
-            txtLambda.ValidatingType = typeof(int);
-            // 
-            // txtB
-            // 
-            txtB.Location = new Point(237, 44);
-            txtB.Mask = "99999";
-            txtB.Name = "txtB";
-            txtB.Size = new Size(107, 28);
-            txtB.TabIndex = 20;
-            txtB.ValidatingType = typeof(int);
-            // 
             // btnLimpiar
             // 
             btnLimpiar.Location = new Point(55, 597);
@@ -393,6 +398,7 @@
             btnLimpiar.TabIndex = 7;
             btnLimpiar.Text = "Limpiar campos";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnGenerar
             // 
@@ -402,13 +408,32 @@
             btnGenerar.TabIndex = 8;
             btnGenerar.Text = "Generar números";
             btnGenerar.UseVisualStyleBackColor = true;
+            btnGenerar.Click += btnGenerar_Click;
             // 
-            // Simulador
+            // chartFrecuencia
+            // 
+            chartArea1.Name = "ChartArea1";
+            chartFrecuencia.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartFrecuencia.Legends.Add(legend1);
+            chartFrecuencia.Location = new Point(770, 381);
+            chartFrecuencia.Name = "chartFrecuencia";
+            chartFrecuencia.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartFrecuencia.Series.Add(series1);
+            chartFrecuencia.Size = new Size(676, 276);
+            chartFrecuencia.TabIndex = 12;
+            chartFrecuencia.Text = "Tabla de frecuencias";
+            // 
+            // Generador
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1458, 693);
+            Controls.Add(chartFrecuencia);
             Controls.Add(btnGenerar);
             Controls.Add(btnLimpiar);
             Controls.Add(txtTamañoMuestra);
@@ -421,7 +446,7 @@
             Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.Black;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "Simulador";
+            Name = "Generador";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Simulador";
             ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).EndInit();
@@ -432,6 +457,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartFrecuencia).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -471,5 +497,6 @@
         private MaskedTextBox txtA;
         private Button btnLimpiar;
         private Button btnGenerar;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartFrecuencia;
     }
 }

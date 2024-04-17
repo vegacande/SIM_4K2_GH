@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "b7ABNSxMkpa4LecBKyGGzqQ0lyQjXfnp8jv5iAiGQRoy6a3hw0SY1cFRUaBx55yjBcgm9rdGSpon5XcWsk9NSQ==",
+  "dgSpecHash": "g9ElNAn+agrW1HWZzUiMiXxj0as/zyVALre97zuiOqGl97qNiVvIiEPS1BKyVUz6a5BxiSrMxUEu65N1P//urA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mari\\Documents\\GitHub\\SIM_4K2_GH\\TP01_4K2_GH\\TP01_4K2_GH\\TP01_4K2_GH.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mari\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mari\\.nuget\\packages\\winforms.datavisualization\\1.9.2\\winforms.datavisualization.1.9.2.nupkg.sha512"
+  ],
   "logs": []
 }
