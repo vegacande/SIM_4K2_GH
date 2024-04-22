@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             grillaFrecuencias = new DataGridView();
             intervalo = new DataGridViewTextBoxColumn();
             limInf = new DataGridViewTextBoxColumn();
@@ -65,12 +65,19 @@
             btnLimpiar = new Button();
             btnGenerar = new Button();
             chartFrecuencia = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            grillaConFEAgrupada = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaAleatorios).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartFrecuencia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)grillaConFEAgrupada).BeginInit();
             SuspendLayout();
             // 
             // grillaFrecuencias
@@ -80,7 +87,7 @@
             grillaFrecuencias.BackgroundColor = Color.Lavender;
             grillaFrecuencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grillaFrecuencias.Columns.AddRange(new DataGridViewColumn[] { intervalo, limInf, limSup, frecObs, frecEsp });
-            grillaFrecuencias.Location = new Point(770, 28);
+            grillaFrecuencias.Location = new Point(1027, 28);
             grillaFrecuencias.Name = "grillaFrecuencias";
             grillaFrecuencias.ReadOnly = true;
             grillaFrecuencias.RowHeadersWidth = 51;
@@ -135,12 +142,12 @@
             grillaAleatorios.BackgroundColor = Color.Lavender;
             grillaAleatorios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grillaAleatorios.Columns.AddRange(new DataGridViewColumn[] { idNum, numero });
-            grillaAleatorios.Location = new Point(503, 28);
+            grillaAleatorios.Location = new Point(497, 28);
             grillaAleatorios.Name = "grillaAleatorios";
             grillaAleatorios.ReadOnly = true;
             grillaAleatorios.RowHeadersWidth = 51;
             grillaAleatorios.RowTemplate.Height = 29;
-            grillaAleatorios.Size = new Size(250, 653);
+            grillaAleatorios.Size = new Size(288, 448);
             grillaAleatorios.TabIndex = 1;
             // 
             // idNum
@@ -412,27 +419,83 @@
             // 
             // chartFrecuencia
             // 
-            chartArea1.Name = "ChartArea1";
-            chartFrecuencia.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chartFrecuencia.Legends.Add(legend1);
-            chartFrecuencia.Location = new Point(770, 381);
+            chartArea2.Name = "ChartArea1";
+            chartFrecuencia.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chartFrecuencia.Legends.Add(legend2);
+            chartFrecuencia.Location = new Point(458, 518);
             chartFrecuencia.Name = "chartFrecuencia";
             chartFrecuencia.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chartFrecuencia.Series.Add(series1);
-            chartFrecuencia.Size = new Size(676, 276);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartFrecuencia.Series.Add(series2);
+            chartFrecuencia.Size = new Size(546, 258);
             chartFrecuencia.TabIndex = 12;
             chartFrecuencia.Text = "Tabla de frecuencias";
+            // 
+            // grillaConFEAgrupada
+            // 
+            grillaConFEAgrupada.AllowUserToAddRows = false;
+            grillaConFEAgrupada.AllowUserToDeleteRows = false;
+            grillaConFEAgrupada.BackgroundColor = Color.Lavender;
+            grillaConFEAgrupada.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grillaConFEAgrupada.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            grillaConFEAgrupada.Location = new Point(1027, 385);
+            grillaConFEAgrupada.Name = "grillaConFEAgrupada";
+            grillaConFEAgrupada.ReadOnly = true;
+            grillaConFEAgrupada.RowHeadersWidth = 51;
+            grillaConFEAgrupada.RowTemplate.Height = 29;
+            grillaConFEAgrupada.Size = new Size(676, 335);
+            grillaConFEAgrupada.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Intervalo";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "LI";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "LS";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "FO";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "FE";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Width = 125;
             // 
             // Generador
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1458, 693);
+            ClientSize = new Size(1736, 807);
+            Controls.Add(grillaConFEAgrupada);
             Controls.Add(chartFrecuencia);
             Controls.Add(btnGenerar);
             Controls.Add(btnLimpiar);
@@ -458,6 +521,7 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chartFrecuencia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)grillaConFEAgrupada).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -498,5 +562,11 @@
         private Button btnLimpiar;
         private Button btnGenerar;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFrecuencia;
+        private DataGridView grillaConFEAgrupada;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
