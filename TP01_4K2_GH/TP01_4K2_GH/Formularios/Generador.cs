@@ -15,6 +15,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using Chart = System.Windows.Forms.DataVisualization.Charting.Chart;
 using Series = System.Windows.Forms.DataVisualization.Charting.Series;
 using MathNet.Numerics.Distributions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TP01_4K2_GH.Formularios
 {
@@ -120,7 +121,7 @@ namespace TP01_4K2_GH.Formularios
             txtMedia.Enabled = true;
         }
 
-        
+
 
         /// <summary>
         /// Trunca el numero a 4 decimales
@@ -269,6 +270,9 @@ namespace TP01_4K2_GH.Formularios
             DataTable tablaFO = calcularFrecuenciaObservada(lista, cantIntervalos);
             double totalFrecObs = 0;
             double totalFrecEsp = 0;
+            double chi = 0;
+            double fo = 0;
+            double totalChi = 0;
 
             for (int i = 0; i < cantIntervalos; i++)
             {
@@ -301,11 +305,60 @@ namespace TP01_4K2_GH.Formularios
 
                 totalFrecObs += truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"]));
                 totalFrecEsp += frecuenciaEsp;
-                grillaFrecuencias.Rows.Add(truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["Intervalo"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LI"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LS"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"])), truncarNumero(frecuenciaEsp));
+                fo = truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"]));
+                double diferencia = fo - frecuenciaEsp;
+                chi = Math.Pow(diferencia, 2) / frecuenciaEsp;
+                totalChi += chi;
+                grillaFrecuencias.Rows.Add(truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["Intervalo"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LI"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LS"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"])), truncarNumero(frecuenciaEsp), truncarNumero(chi));
             }
-            grillaFrecuencias.Rows.Add("", "", "", truncarNumero(totalFrecObs), truncarNumero(totalFrecEsp));
+            grillaFrecuencias.Rows.Add("", "", "", truncarNumero(totalFrecObs), truncarNumero(totalFrecEsp), truncarNumero(totalChi));
             generarHistograma(tablaFO);
+            ValidarHipotesis(totalChi, cantIntervalos);
         }
+
+        private void ValidarHipotesis(double totalChi, int k)
+        {
+            txtValorTabulado.Clear();
+
+            double valorCalculado = totalChi;
+            double valorTabulado = CalcularValorTab(k);
+
+            valorTabulado = truncarNumero(valorTabulado);
+
+            txtValorTabulado.Text = Convert.ToString(valorTabulado);
+
+            if (valorCalculado < valorTabulado)
+                lbl_resHipotesis.Text = "No se rechaza la hipotesis.";
+            else
+                lbl_resHipotesis.Text = "Se rechaza la hipotesis.";
+        }
+
+        private double CalcularValorTab(int k)
+        {
+            int m = 0;
+            if (rbUniforme.Checked)
+            {
+                m = 2;
+            }
+
+            else if (rbExponencial.Checked)
+            {
+                m = 1;
+            }
+            else if (rbNormal.Checked)
+            {
+                m = 2;
+            }
+
+            double gradosLibertad = k-1-m; // Los grados de libertad para la distribución chi-cuadrado
+            double probabilidad = 0.1; // El nivel de significancia (por ejemplo, 0.05 para un nivel de confianza del 95%)
+
+            // Calcula el valor chi-cuadrado tabulado para el nivel de significancia dado y los grados de libertad
+            double chiCuadradoTabulado = ChiSquared.InvCDF(gradosLibertad, 1 - probabilidad);
+
+            return chiCuadradoTabulado;
+        }
+
         /// <summary>
         /// Calculo de la frecuencia esperada con biblioteca Math.Numerics
         /// </summary>

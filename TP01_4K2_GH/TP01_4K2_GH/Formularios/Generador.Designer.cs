@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             grillaFrecuencias = new DataGridView();
             intervalo = new DataGridViewTextBoxColumn();
             limInf = new DataGridViewTextBoxColumn();
             limSup = new DataGridViewTextBoxColumn();
             frecObs = new DataGridViewTextBoxColumn();
             frecEsp = new DataGridViewTextBoxColumn();
+            CHI = new DataGridViewTextBoxColumn();
             grillaAleatorios = new DataGridView();
             idNum = new DataGridViewTextBoxColumn();
             numero = new DataGridViewTextBoxColumn();
@@ -46,6 +47,11 @@
             rbNormal = new RadioButton();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            txtDesv = new TextBox();
+            txtMedia = new TextBox();
+            txtLambda = new TextBox();
+            txtB = new TextBox();
+            txtA = new TextBox();
             label6 = new Label();
             label3 = new Label();
             label5 = new Label();
@@ -66,11 +72,10 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            txtA = new TextBox();
-            txtB = new TextBox();
-            txtLambda = new TextBox();
-            txtMedia = new TextBox();
-            txtDesv = new TextBox();
+            txtValorTabulado = new TextBox();
+            label7 = new Label();
+            label8 = new Label();
+            lbl_resHipotesis = new Label();
             ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaAleatorios).BeginInit();
             groupBox1.SuspendLayout();
@@ -86,7 +91,7 @@
             grillaFrecuencias.AllowUserToDeleteRows = false;
             grillaFrecuencias.BackgroundColor = Color.Lavender;
             grillaFrecuencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grillaFrecuencias.Columns.AddRange(new DataGridViewColumn[] { intervalo, limInf, limSup, frecObs, frecEsp });
+            grillaFrecuencias.Columns.AddRange(new DataGridViewColumn[] { intervalo, limInf, limSup, frecObs, frecEsp, CHI });
             grillaFrecuencias.Location = new Point(1027, 28);
             grillaFrecuencias.Name = "grillaFrecuencias";
             grillaFrecuencias.ReadOnly = true;
@@ -134,6 +139,12 @@
             frecEsp.Name = "frecEsp";
             frecEsp.ReadOnly = true;
             frecEsp.Width = 125;
+            // 
+            // CHI
+            // 
+            CHI.HeaderText = "CHI";
+            CHI.Name = "CHI";
+            CHI.ReadOnly = true;
             // 
             // grillaAleatorios
             // 
@@ -241,6 +252,41 @@
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos";
+            // 
+            // txtDesv
+            // 
+            txtDesv.Location = new Point(218, 126);
+            txtDesv.Name = "txtDesv";
+            txtDesv.Size = new Size(100, 23);
+            txtDesv.TabIndex = 22;
+            // 
+            // txtMedia
+            // 
+            txtMedia.Location = new Point(61, 126);
+            txtMedia.Name = "txtMedia";
+            txtMedia.Size = new Size(100, 23);
+            txtMedia.TabIndex = 21;
+            // 
+            // txtLambda
+            // 
+            txtLambda.Location = new Point(63, 83);
+            txtLambda.Name = "txtLambda";
+            txtLambda.Size = new Size(100, 23);
+            txtLambda.TabIndex = 20;
+            // 
+            // txtB
+            // 
+            txtB.Location = new Point(219, 38);
+            txtB.Name = "txtB";
+            txtB.Size = new Size(100, 23);
+            txtB.TabIndex = 15;
+            // 
+            // txtA
+            // 
+            txtA.Location = new Point(61, 41);
+            txtA.Name = "txtA";
+            txtA.Size = new Size(100, 23);
+            txtA.TabIndex = 14;
             // 
             // label6
             // 
@@ -377,17 +423,17 @@
             // 
             // chartFrecuencia
             // 
-            chartArea3.Name = "ChartArea1";
-            chartFrecuencia.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            chartFrecuencia.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            chartFrecuencia.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartFrecuencia.Legends.Add(legend1);
             chartFrecuencia.Location = new Point(458, 518);
             chartFrecuencia.Name = "chartFrecuencia";
             chartFrecuencia.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chartFrecuencia.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartFrecuencia.Series.Add(series1);
             chartFrecuencia.Size = new Size(546, 258);
             chartFrecuencia.TabIndex = 12;
             chartFrecuencia.Text = "Tabla de frecuencias";
@@ -447,40 +493,40 @@
             dataGridViewTextBoxColumn5.ReadOnly = true;
             dataGridViewTextBoxColumn5.Width = 125;
             // 
-            // txtA
+            // txtValorTabulado
             // 
-            txtA.Location = new Point(61, 41);
-            txtA.Name = "txtA";
-            txtA.Size = new Size(100, 23);
-            txtA.TabIndex = 14;
+            txtValorTabulado.Location = new Point(824, 104);
+            txtValorTabulado.Name = "txtValorTabulado";
+            txtValorTabulado.ReadOnly = true;
+            txtValorTabulado.Size = new Size(100, 23);
+            txtValorTabulado.TabIndex = 14;
             // 
-            // txtB
+            // label7
             // 
-            txtB.Location = new Point(219, 38);
-            txtB.Name = "txtB";
-            txtB.Size = new Size(100, 23);
-            txtB.TabIndex = 15;
+            label7.AutoSize = true;
+            label7.Location = new Point(822, 66);
+            label7.Name = "label7";
+            label7.Size = new Size(122, 17);
+            label7.TabIndex = 15;
+            label7.Text = "Chi valor tabulado";
             // 
-            // txtLambda
+            // label8
             // 
-            txtLambda.Location = new Point(63, 83);
-            txtLambda.Name = "txtLambda";
-            txtLambda.Size = new Size(100, 23);
-            txtLambda.TabIndex = 20;
+            label8.AutoSize = true;
+            label8.Location = new Point(825, 145);
+            label8.Name = "label8";
+            label8.Size = new Size(72, 17);
+            label8.TabIndex = 16;
+            label8.Text = "Resultado";
             // 
-            // txtMedia
+            // lbl_resHipotesis
             // 
-            txtMedia.Location = new Point(61, 126);
-            txtMedia.Name = "txtMedia";
-            txtMedia.Size = new Size(100, 23);
-            txtMedia.TabIndex = 21;
-            // 
-            // txtDesv
-            // 
-            txtDesv.Location = new Point(218, 126);
-            txtDesv.Name = "txtDesv";
-            txtDesv.Size = new Size(100, 23);
-            txtDesv.TabIndex = 22;
+            lbl_resHipotesis.AutoSize = true;
+            lbl_resHipotesis.Location = new Point(825, 178);
+            lbl_resHipotesis.Name = "lbl_resHipotesis";
+            lbl_resHipotesis.Size = new Size(16, 17);
+            lbl_resHipotesis.TabIndex = 17;
+            lbl_resHipotesis.Text = "..";
             // 
             // Generador
             // 
@@ -488,6 +534,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1736, 807);
+            Controls.Add(lbl_resHipotesis);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(txtValorTabulado);
             Controls.Add(grillaConFEAgrupada);
             Controls.Add(chartFrecuencia);
             Controls.Add(btnGenerar);
@@ -561,5 +611,10 @@
         private TextBox txtB;
         private TextBox txtA;
         private TextBox txtDesv;
+        private DataGridViewTextBoxColumn CHI;
+        private TextBox txtValorTabulado;
+        private Label label7;
+        private Label label8;
+        private Label lbl_resHipotesis;
     }
 }
