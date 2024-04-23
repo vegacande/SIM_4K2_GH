@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             grillaFrecuencias = new DataGridView();
             intervalo = new DataGridViewTextBoxColumn();
             limInf = new DataGridViewTextBoxColumn();
@@ -46,11 +46,6 @@
             rbNormal = new RadioButton();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            txtB = new MaskedTextBox();
-            txtLambda = new MaskedTextBox();
-            txtMedia = new MaskedTextBox();
-            txtDesv = new MaskedTextBox();
-            txtA = new MaskedTextBox();
             label6 = new Label();
             label3 = new Label();
             label5 = new Label();
@@ -71,6 +66,11 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            txtA = new TextBox();
+            txtB = new TextBox();
+            txtLambda = new TextBox();
+            txtMedia = new TextBox();
+            txtDesv = new TextBox();
             ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaAleatorios).BeginInit();
             groupBox1.SuspendLayout();
@@ -183,49 +183,52 @@
             rbExponencial.AutoSize = true;
             rbExponencial.Location = new Point(115, 58);
             rbExponencial.Name = "rbExponencial";
-            rbExponencial.Size = new Size(136, 28);
+            rbExponencial.Size = new Size(102, 21);
             rbExponencial.TabIndex = 2;
             rbExponencial.TabStop = true;
             rbExponencial.Text = "Exponencial";
             rbExponencial.UseVisualStyleBackColor = true;
+            rbExponencial.CheckedChanged += btnExponencial_CheckedChanged;
             // 
             // rbUniforme
             // 
             rbUniforme.AutoSize = true;
             rbUniforme.Location = new Point(257, 58);
             rbUniforme.Name = "rbUniforme";
-            rbUniforme.Size = new Size(112, 28);
+            rbUniforme.Size = new Size(83, 21);
             rbUniforme.TabIndex = 1;
             rbUniforme.TabStop = true;
             rbUniforme.Text = "Uniforme";
             rbUniforme.UseVisualStyleBackColor = true;
+            rbUniforme.CheckedChanged += btnUniforme_CheckedChanged;
             // 
             // rbNormal
             // 
             rbNormal.AutoSize = true;
             rbNormal.Location = new Point(13, 58);
             rbNormal.Name = "rbNormal";
-            rbNormal.Size = new Size(96, 28);
+            rbNormal.Size = new Size(71, 21);
             rbNormal.TabIndex = 0;
             rbNormal.TabStop = true;
             rbNormal.Text = "Normal";
             rbNormal.UseVisualStyleBackColor = true;
+            rbNormal.CheckedChanged += btnNormal_CheckedChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(46, 191);
             label1.Name = "label1";
-            label1.Size = new Size(209, 24);
+            label1.Size = new Size(159, 17);
             label1.TabIndex = 3;
             label1.Text = "Tamaño de muestra (N)";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(txtB);
-            groupBox2.Controls.Add(txtLambda);
-            groupBox2.Controls.Add(txtMedia);
             groupBox2.Controls.Add(txtDesv);
+            groupBox2.Controls.Add(txtMedia);
+            groupBox2.Controls.Add(txtLambda);
+            groupBox2.Controls.Add(txtB);
             groupBox2.Controls.Add(txtA);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label3);
@@ -239,58 +242,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos";
             // 
-            // txtB
-            // 
-            txtB.Location = new Point(237, 44);
-            txtB.Mask = "99999";
-            txtB.Name = "txtB";
-            txtB.Size = new Size(107, 28);
-            txtB.TabIndex = 20;
-            txtB.ValidatingType = typeof(int);
-            // 
-            // txtLambda
-            // 
-            txtLambda.Location = new Point(61, 84);
-            txtLambda.Mask = "99999";
-            txtLambda.Name = "txtLambda";
-            txtLambda.Size = new Size(107, 28);
-            txtLambda.TabIndex = 19;
-            txtLambda.ValidatingType = typeof(int);
-            // 
-            // txtMedia
-            // 
-            txtMedia.Location = new Point(61, 123);
-            txtMedia.Mask = "99999";
-            txtMedia.Name = "txtMedia";
-            txtMedia.Size = new Size(107, 28);
-            txtMedia.TabIndex = 18;
-            txtMedia.ValidatingType = typeof(int);
-            // 
-            // txtDesv
-            // 
-            txtDesv.Location = new Point(237, 123);
-            txtDesv.Mask = "99999";
-            txtDesv.Name = "txtDesv";
-            txtDesv.Size = new Size(107, 28);
-            txtDesv.TabIndex = 17;
-            txtDesv.ValidatingType = typeof(int);
-            // 
-            // txtA
-            // 
-            txtA.Location = new Point(61, 44);
-            txtA.Mask = "99999";
-            txtA.Name = "txtA";
-            txtA.Size = new Size(107, 28);
-            txtA.TabIndex = 16;
-            txtA.ValidatingType = typeof(int);
-            // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(34, 86);
             label6.Name = "label6";
-            label6.Size = new Size(21, 25);
+            label6.Size = new Size(16, 18);
             label6.TabIndex = 15;
             label6.Text = "λ";
             // 
@@ -299,17 +257,17 @@
             label3.AutoSize = true;
             label3.Location = new Point(191, 44);
             label3.Name = "label3";
-            label3.Size = new Size(23, 24);
+            label3.Size = new Size(17, 17);
             label3.TabIndex = 8;
             label3.Text = "B";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(191, 126);
             label5.Name = "label5";
-            label5.Size = new Size(22, 25);
+            label5.Size = new Size(17, 18);
             label5.TabIndex = 14;
             label5.Text = "σ";
             // 
@@ -318,17 +276,17 @@
             label2.AutoSize = true;
             label2.Location = new Point(33, 44);
             label2.Name = "label2";
-            label2.Size = new Size(22, 24);
+            label2.Size = new Size(17, 17);
             label2.TabIndex = 7;
             label2.Text = "A";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(31, 126);
             label4.Name = "label4";
-            label4.Size = new Size(24, 25);
+            label4.Size = new Size(16, 18);
             label4.TabIndex = 13;
             label4.Text = "μ";
             // 
@@ -350,7 +308,7 @@
             rb23.AutoSize = true;
             rb23.Location = new Point(257, 58);
             rb23.Name = "rb23";
-            rb23.Size = new Size(51, 28);
+            rb23.Size = new Size(42, 21);
             rb23.TabIndex = 3;
             rb23.TabStop = true;
             rb23.Text = "23";
@@ -361,7 +319,7 @@
             rb12.AutoSize = true;
             rb12.Location = new Point(98, 58);
             rb12.Name = "rb12";
-            rb12.Size = new Size(47, 28);
+            rb12.Size = new Size(42, 21);
             rb12.TabIndex = 2;
             rb12.TabStop = true;
             rb12.Text = "12";
@@ -372,7 +330,7 @@
             rb16.AutoSize = true;
             rb16.Location = new Point(182, 58);
             rb16.Name = "rb16";
-            rb16.Size = new Size(47, 28);
+            rb16.Size = new Size(42, 21);
             rb16.TabIndex = 1;
             rb16.TabStop = true;
             rb16.Text = "16";
@@ -383,7 +341,7 @@
             rb10.AutoSize = true;
             rb10.Location = new Point(28, 58);
             rb10.Name = "rb10";
-            rb10.Size = new Size(48, 28);
+            rb10.Size = new Size(42, 21);
             rb10.TabIndex = 0;
             rb10.TabStop = true;
             rb10.Text = "10";
@@ -394,7 +352,7 @@
             txtTamañoMuestra.Location = new Point(261, 191);
             txtTamañoMuestra.Mask = "9999999";
             txtTamañoMuestra.Name = "txtTamañoMuestra";
-            txtTamañoMuestra.Size = new Size(125, 28);
+            txtTamañoMuestra.Size = new Size(125, 23);
             txtTamañoMuestra.TabIndex = 6;
             // 
             // btnLimpiar
@@ -419,17 +377,17 @@
             // 
             // chartFrecuencia
             // 
-            chartArea2.Name = "ChartArea1";
-            chartFrecuencia.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chartFrecuencia.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            chartFrecuencia.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            chartFrecuencia.Legends.Add(legend3);
             chartFrecuencia.Location = new Point(458, 518);
             chartFrecuencia.Name = "chartFrecuencia";
             chartFrecuencia.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chartFrecuencia.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            chartFrecuencia.Series.Add(series3);
             chartFrecuencia.Size = new Size(546, 258);
             chartFrecuencia.TabIndex = 12;
             chartFrecuencia.Text = "Tabla de frecuencias";
@@ -489,9 +447,44 @@
             dataGridViewTextBoxColumn5.ReadOnly = true;
             dataGridViewTextBoxColumn5.Width = 125;
             // 
+            // txtA
+            // 
+            txtA.Location = new Point(61, 41);
+            txtA.Name = "txtA";
+            txtA.Size = new Size(100, 23);
+            txtA.TabIndex = 14;
+            // 
+            // txtB
+            // 
+            txtB.Location = new Point(219, 38);
+            txtB.Name = "txtB";
+            txtB.Size = new Size(100, 23);
+            txtB.TabIndex = 15;
+            // 
+            // txtLambda
+            // 
+            txtLambda.Location = new Point(63, 83);
+            txtLambda.Name = "txtLambda";
+            txtLambda.Size = new Size(100, 23);
+            txtLambda.TabIndex = 20;
+            // 
+            // txtMedia
+            // 
+            txtMedia.Location = new Point(61, 126);
+            txtMedia.Name = "txtMedia";
+            txtMedia.Size = new Size(100, 23);
+            txtMedia.TabIndex = 21;
+            // 
+            // txtDesv
+            // 
+            txtDesv.Location = new Point(218, 126);
+            txtDesv.Name = "txtDesv";
+            txtDesv.Size = new Size(100, 23);
+            txtDesv.TabIndex = 22;
+            // 
             // Generador
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1736, 807);
@@ -506,7 +499,7 @@
             Controls.Add(groupBox1);
             Controls.Add(grillaAleatorios);
             Controls.Add(grillaFrecuencias);
-            Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.Black;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Generador";
@@ -554,11 +547,6 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private MaskedTextBox txtB;
-        private MaskedTextBox txtLambda;
-        private MaskedTextBox txtMedia;
-        private MaskedTextBox txtDesv;
-        private MaskedTextBox txtA;
         private Button btnLimpiar;
         private Button btnGenerar;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFrecuencia;
@@ -568,5 +556,10 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private TextBox txtMedia;
+        private TextBox txtLambda;
+        private TextBox txtB;
+        private TextBox txtA;
+        private TextBox txtDesv;
     }
 }

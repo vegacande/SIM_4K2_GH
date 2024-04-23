@@ -1,5 +1,4 @@
-﻿using MathNet.Numerics.Distributions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,34 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using MathNet.Numerics.Random;
+using MathNet.Numerics;
+using MathNet.Numerics.Statistics;
 using System.Windows.Forms.DataVisualization.Charting;
+using Chart = System.Windows.Forms.DataVisualization.Charting.Chart;
+using Series = System.Windows.Forms.DataVisualization.Charting.Series;
+using MathNet.Numerics.Distributions;
 
 namespace TP01_4K2_GH.Formularios
 {
     public partial class Generador : Form
     {
+        #region Variables
+        private int distribucion; //1-Uniforme 2-Exponencial 3-Normal
+        private int cantIntervalos;
+        #endregion
+
         public Generador()
         {
             InitializeComponent();
             rb10.Checked = true;
             rbNormal.Checked = true;
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-        }
-
-        private void limpiarCampos()
-        {
-            txtA.Text = "";
-            txtB.Text = "";
-            txtDesv.Text = "";
-            txtLambda.Text = "";
-            txtMedia.Text = "";
-            txtTamañoMuestra.Text = "";
-            grillaAleatorios.Rows.Clear();
-            grillaFrecuencias.Rows.Clear();
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -75,11 +69,58 @@ namespace TP01_4K2_GH.Formularios
                     }
                     else generarAleatoriosNormal();
                 }
-
-
-
             }
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+
+        private void limpiarCampos()
+        {
+            txtA.Text = "";
+            txtB.Text = "";
+            txtDesv.Text = "";
+            txtLambda.Text = "";
+            txtMedia.Text = "";
+            txtTamañoMuestra.Text = "";
+            grillaAleatorios.Rows.Clear();
+            grillaFrecuencias.Rows.Clear();
+            chartFrecuencia.Series.Clear();
+        }
+
+        private void btnUniforme_CheckedChanged(object sender, EventArgs e)
+        {
+            distribucion = 1;
+            limpiarCampos();
+            txtA.Enabled = true;
+            txtB.Enabled = true;
+            txtDesv.Enabled = false;
+            txtLambda.Enabled = false;
+            txtMedia.Enabled = false;
+        }
+        private void btnExponencial_CheckedChanged(object sender, EventArgs e)
+        {
+            distribucion = 2;
+            limpiarCampos();
+            txtA.Enabled = false;
+            txtB.Enabled = false;
+            txtDesv.Enabled = false;
+            txtLambda.Enabled = true;
+            txtMedia.Enabled = true;
+        }
+        private void btnNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            distribucion = 3;
+            limpiarCampos();
+            txtA.Enabled = false;
+            txtB.Enabled = false;
+            txtLambda.Enabled = false;
+            txtDesv.Enabled = true;
+            txtMedia.Enabled = true;
+        }
+
+        
 
         /// <summary>
         /// Trunca el numero a 4 decimales
@@ -166,11 +207,11 @@ namespace TP01_4K2_GH.Formularios
             }
             generarTablaFrecuencias(lista);
         }
-        
+
         /// <summary>
         /// Genera los numeros aleatorios para la distribucion Exponencial y los muestra en la grilla
         /// </summary>
-      
+
         private void generarAleatoriosExponencial()
         {
             grillaAleatorios.Rows.Clear();
@@ -220,7 +261,7 @@ namespace TP01_4K2_GH.Formularios
         private void generarTablaFrecuencias(List<double> lista)
         {
             grillaFrecuencias.Rows.Clear();
-            int cantIntervalos = 10;
+            cantIntervalos = 10;
             if (rb12.Checked) cantIntervalos = 12;
             else if (rb16.Checked) cantIntervalos = 16;
             else if (rb23.Checked) cantIntervalos = 23;
@@ -277,19 +318,8 @@ namespace TP01_4K2_GH.Formularios
             double res = MathNet.Numerics.ExcelFunctions.NormDist(lim, media, des, true);
             return res;
         }
-        /// <summary>
-        /// Crea un numero aleatorio de tipo random
-        /// </summary>
-        private double randomDoubleRandom(Random r)
-        {
-            double random = r.NextDouble();
 
-            return random;
-        }
-        /// <summary>
-        /// Se genera el histograma en base a los datos recuperados en los pasos anteriores
-        /// </summary>
-        /// <param name="intervalos">tabla con los datos de: intervalo, LI, LS y FO</param>
+
         private void generarHistograma(DataTable intervalos)
         {
             double valorMaximo = 0;
@@ -299,13 +329,20 @@ namespace TP01_4K2_GH.Formularios
             Series histogramSeries = new Series("FO");
             histogramSeries.ChartType = SeriesChartType.Column;
 
+            // Contador para asignar números secuenciales a cada intervalo
+            int contador = 1;
+
             // Se agrega los datos del DataTable al histograma
             foreach (DataRow row in intervalos.Rows)
             {
-                string categoria = row["Intervalo"].ToString();
+                // Asigna un número secuencial a cada intervalo
+                double categoria = contador;
                 int frecuencia = Convert.ToInt32(row["FO"]);
                 histogramSeries.Points.AddXY(categoria, frecuencia);
                 valorMaximo = Math.Max(valorMaximo, frecuencia);
+
+                // Incrementa el contador para el siguiente intervalo
+                contador++;
             }
 
             // Agregar la serie al gráfico
@@ -315,7 +352,7 @@ namespace TP01_4K2_GH.Formularios
             histogramSeries.Color = Color.MediumPurple;
             histogramSeries.BorderColor = Color.DarkViolet;
 
-            // Configura el nombre y propiedades del eje X e I en el gráfico
+            // Configura el nombre y propiedades del eje X e Y en el gráfico
             chartFrecuencia.ChartAreas[0].AxisX.Title = "Intervalos";
             chartFrecuencia.ChartAreas[0].AxisY.Title = "Frecuencias";
             chartFrecuencia.ChartAreas[0].AxisY.Maximum = valorMaximo;
@@ -325,6 +362,16 @@ namespace TP01_4K2_GH.Formularios
 
             // Establecer el ancho de las barras (reduciendo el espacio)
             histogramSeries["PointWidth"] = "1"; // Puedes ajustar este valor según tus preferencias
+        }
+
+        /// <summary>
+        /// Crea un numero aleatorio de tipo random
+        /// </summary>
+        private double randomDoubleRandom(Random r)
+        {
+            double random = r.NextDouble();
+
+            return random;
         }
     }
 }
