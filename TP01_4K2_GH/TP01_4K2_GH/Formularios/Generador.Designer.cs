@@ -31,542 +31,741 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            grillaFrecuencias = new DataGridView();
-            intervalo = new DataGridViewTextBoxColumn();
-            limInf = new DataGridViewTextBoxColumn();
-            limSup = new DataGridViewTextBoxColumn();
-            frecObs = new DataGridViewTextBoxColumn();
-            frecEsp = new DataGridViewTextBoxColumn();
-            CHI = new DataGridViewTextBoxColumn();
-            grillaAleatorios = new DataGridView();
-            idNum = new DataGridViewTextBoxColumn();
-            numero = new DataGridViewTextBoxColumn();
-            groupBox1 = new GroupBox();
-            rbExponencial = new RadioButton();
-            rbUniforme = new RadioButton();
-            rbNormal = new RadioButton();
-            label1 = new Label();
-            groupBox2 = new GroupBox();
-            txtDesv = new TextBox();
-            txtMedia = new TextBox();
-            txtLambda = new TextBox();
-            txtB = new TextBox();
-            txtA = new TextBox();
-            label6 = new Label();
-            label3 = new Label();
-            label5 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            groupBox3 = new GroupBox();
-            rb23 = new RadioButton();
-            rb12 = new RadioButton();
-            rb16 = new RadioButton();
-            rb10 = new RadioButton();
-            txtTamañoMuestra = new MaskedTextBox();
-            btnLimpiar = new Button();
-            btnGenerar = new Button();
-            chartFrecuencia = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            grillaConFEAgrupada = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            txtValorTabulado = new TextBox();
-            label7 = new Label();
-            label8 = new Label();
-            lbl_resHipotesis = new Label();
-            ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)grillaAleatorios).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chartFrecuencia).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)grillaConFEAgrupada).BeginInit();
-            SuspendLayout();
+            this.grillaFrecuencias = new System.Windows.Forms.DataGridView();
+            this.intervalo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limInf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frecObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frecEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grillaAleatorios = new System.Windows.Forms.DataGridView();
+            this.idNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbExponencial = new System.Windows.Forms.RadioButton();
+            this.rbUniforme = new System.Windows.Forms.RadioButton();
+            this.rbNormal = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDesv = new System.Windows.Forms.TextBox();
+            this.txtMedia = new System.Windows.Forms.TextBox();
+            this.txtLambda = new System.Windows.Forms.TextBox();
+            this.txtB = new System.Windows.Forms.TextBox();
+            this.txtA = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rb23 = new System.Windows.Forms.RadioButton();
+            this.rb12 = new System.Windows.Forms.RadioButton();
+            this.rb16 = new System.Windows.Forms.RadioButton();
+            this.rb10 = new System.Windows.Forms.RadioButton();
+            this.txtTamañoMuestra = new System.Windows.Forms.MaskedTextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.chartFrecuencia = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.txtValorTabulado = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_resHipotesis = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.po = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.po_ac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pe_ac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grillaKS = new System.Windows.Forms.DataGridView();
+            this.intervaloKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limInfKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limSupKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalProbObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalProbEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.difProbabilidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_resHipotesisKS = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtKSTabulado = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaFrecuencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaAleatorios)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFrecuencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaKS)).BeginInit();
+            this.SuspendLayout();
             // 
             // grillaFrecuencias
             // 
-            grillaFrecuencias.AllowUserToAddRows = false;
-            grillaFrecuencias.AllowUserToDeleteRows = false;
-            grillaFrecuencias.BackgroundColor = Color.Lavender;
-            grillaFrecuencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grillaFrecuencias.Columns.AddRange(new DataGridViewColumn[] { intervalo, limInf, limSup, frecObs, frecEsp, CHI });
-            grillaFrecuencias.Location = new Point(1027, 28);
-            grillaFrecuencias.Name = "grillaFrecuencias";
-            grillaFrecuencias.ReadOnly = true;
-            grillaFrecuencias.RowHeadersWidth = 51;
-            grillaFrecuencias.RowTemplate.Height = 29;
-            grillaFrecuencias.Size = new Size(676, 335);
-            grillaFrecuencias.TabIndex = 0;
+            this.grillaFrecuencias.AllowUserToAddRows = false;
+            this.grillaFrecuencias.AllowUserToDeleteRows = false;
+            this.grillaFrecuencias.BackgroundColor = System.Drawing.Color.Lavender;
+            this.grillaFrecuencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaFrecuencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.intervalo,
+            this.limInf,
+            this.limSup,
+            this.frecObs,
+            this.frecEsp,
+            this.CHI});
+            this.grillaFrecuencias.Location = new System.Drawing.Point(1027, 28);
+            this.grillaFrecuencias.Name = "grillaFrecuencias";
+            this.grillaFrecuencias.ReadOnly = true;
+            this.grillaFrecuencias.RowHeadersWidth = 51;
+            this.grillaFrecuencias.RowTemplate.Height = 29;
+            this.grillaFrecuencias.Size = new System.Drawing.Size(676, 335);
+            this.grillaFrecuencias.TabIndex = 0;
             // 
             // intervalo
             // 
-            intervalo.HeaderText = "Intervalo";
-            intervalo.MinimumWidth = 6;
-            intervalo.Name = "intervalo";
-            intervalo.ReadOnly = true;
-            intervalo.Width = 125;
+            this.intervalo.HeaderText = "Intervalo";
+            this.intervalo.MinimumWidth = 6;
+            this.intervalo.Name = "intervalo";
+            this.intervalo.ReadOnly = true;
+            this.intervalo.Width = 125;
             // 
             // limInf
             // 
-            limInf.HeaderText = "LI";
-            limInf.MinimumWidth = 6;
-            limInf.Name = "limInf";
-            limInf.ReadOnly = true;
-            limInf.Width = 125;
+            this.limInf.HeaderText = "LI";
+            this.limInf.MinimumWidth = 6;
+            this.limInf.Name = "limInf";
+            this.limInf.ReadOnly = true;
+            this.limInf.Width = 125;
             // 
             // limSup
             // 
-            limSup.HeaderText = "LS";
-            limSup.MinimumWidth = 6;
-            limSup.Name = "limSup";
-            limSup.ReadOnly = true;
-            limSup.Width = 125;
+            this.limSup.HeaderText = "LS";
+            this.limSup.MinimumWidth = 6;
+            this.limSup.Name = "limSup";
+            this.limSup.ReadOnly = true;
+            this.limSup.Width = 125;
             // 
             // frecObs
             // 
-            frecObs.HeaderText = "FO";
-            frecObs.MinimumWidth = 6;
-            frecObs.Name = "frecObs";
-            frecObs.ReadOnly = true;
-            frecObs.Width = 125;
+            this.frecObs.HeaderText = "FO";
+            this.frecObs.MinimumWidth = 6;
+            this.frecObs.Name = "frecObs";
+            this.frecObs.ReadOnly = true;
+            this.frecObs.Width = 125;
             // 
             // frecEsp
             // 
-            frecEsp.HeaderText = "FE";
-            frecEsp.MinimumWidth = 6;
-            frecEsp.Name = "frecEsp";
-            frecEsp.ReadOnly = true;
-            frecEsp.Width = 125;
+            this.frecEsp.HeaderText = "FE";
+            this.frecEsp.MinimumWidth = 6;
+            this.frecEsp.Name = "frecEsp";
+            this.frecEsp.ReadOnly = true;
+            this.frecEsp.Width = 125;
             // 
             // CHI
             // 
-            CHI.HeaderText = "CHI";
-            CHI.Name = "CHI";
-            CHI.ReadOnly = true;
+            this.CHI.HeaderText = "CHI";
+            this.CHI.MinimumWidth = 6;
+            this.CHI.Name = "CHI";
+            this.CHI.ReadOnly = true;
+            this.CHI.Width = 125;
             // 
             // grillaAleatorios
             // 
-            grillaAleatorios.AllowUserToAddRows = false;
-            grillaAleatorios.AllowUserToDeleteRows = false;
-            grillaAleatorios.BackgroundColor = Color.Lavender;
-            grillaAleatorios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grillaAleatorios.Columns.AddRange(new DataGridViewColumn[] { idNum, numero });
-            grillaAleatorios.Location = new Point(497, 28);
-            grillaAleatorios.Name = "grillaAleatorios";
-            grillaAleatorios.ReadOnly = true;
-            grillaAleatorios.RowHeadersWidth = 51;
-            grillaAleatorios.RowTemplate.Height = 29;
-            grillaAleatorios.Size = new Size(288, 448);
-            grillaAleatorios.TabIndex = 1;
+            this.grillaAleatorios.AllowUserToAddRows = false;
+            this.grillaAleatorios.AllowUserToDeleteRows = false;
+            this.grillaAleatorios.BackgroundColor = System.Drawing.Color.Lavender;
+            this.grillaAleatorios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaAleatorios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idNum,
+            this.numero});
+            this.grillaAleatorios.Location = new System.Drawing.Point(497, 28);
+            this.grillaAleatorios.Name = "grillaAleatorios";
+            this.grillaAleatorios.ReadOnly = true;
+            this.grillaAleatorios.RowHeadersWidth = 51;
+            this.grillaAleatorios.RowTemplate.Height = 29;
+            this.grillaAleatorios.Size = new System.Drawing.Size(288, 448);
+            this.grillaAleatorios.TabIndex = 1;
             // 
             // idNum
             // 
-            idNum.HeaderText = "Id";
-            idNum.MinimumWidth = 6;
-            idNum.Name = "idNum";
-            idNum.ReadOnly = true;
-            idNum.Width = 80;
+            this.idNum.HeaderText = "Id";
+            this.idNum.MinimumWidth = 6;
+            this.idNum.Name = "idNum";
+            this.idNum.ReadOnly = true;
+            this.idNum.Width = 80;
             // 
             // numero
             // 
-            numero.HeaderText = "Número";
-            numero.MinimumWidth = 6;
-            numero.Name = "numero";
-            numero.ReadOnly = true;
-            numero.Width = 125;
+            this.numero.HeaderText = "Número";
+            this.numero.MinimumWidth = 6;
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Width = 125;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(rbExponencial);
-            groupBox1.Controls.Add(rbUniforme);
-            groupBox1.Controls.Add(rbNormal);
-            groupBox1.Location = new Point(42, 51);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(391, 108);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Distribución";
+            this.groupBox1.Controls.Add(this.rbExponencial);
+            this.groupBox1.Controls.Add(this.rbUniforme);
+            this.groupBox1.Controls.Add(this.rbNormal);
+            this.groupBox1.Location = new System.Drawing.Point(42, 51);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(391, 108);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Distribución";
             // 
             // rbExponencial
             // 
-            rbExponencial.AutoSize = true;
-            rbExponencial.Location = new Point(115, 58);
-            rbExponencial.Name = "rbExponencial";
-            rbExponencial.Size = new Size(102, 21);
-            rbExponencial.TabIndex = 2;
-            rbExponencial.TabStop = true;
-            rbExponencial.Text = "Exponencial";
-            rbExponencial.UseVisualStyleBackColor = true;
-            rbExponencial.CheckedChanged += btnExponencial_CheckedChanged;
+            this.rbExponencial.AutoSize = true;
+            this.rbExponencial.Location = new System.Drawing.Point(115, 58);
+            this.rbExponencial.Name = "rbExponencial";
+            this.rbExponencial.Size = new System.Drawing.Size(120, 24);
+            this.rbExponencial.TabIndex = 2;
+            this.rbExponencial.TabStop = true;
+            this.rbExponencial.Text = "Exponencial";
+            this.rbExponencial.UseVisualStyleBackColor = true;
+            this.rbExponencial.CheckedChanged += new System.EventHandler(this.btnExponencial_CheckedChanged);
             // 
             // rbUniforme
             // 
-            rbUniforme.AutoSize = true;
-            rbUniforme.Location = new Point(257, 58);
-            rbUniforme.Name = "rbUniforme";
-            rbUniforme.Size = new Size(83, 21);
-            rbUniforme.TabIndex = 1;
-            rbUniforme.TabStop = true;
-            rbUniforme.Text = "Uniforme";
-            rbUniforme.UseVisualStyleBackColor = true;
-            rbUniforme.CheckedChanged += btnUniforme_CheckedChanged;
+            this.rbUniforme.AutoSize = true;
+            this.rbUniforme.Location = new System.Drawing.Point(257, 58);
+            this.rbUniforme.Name = "rbUniforme";
+            this.rbUniforme.Size = new System.Drawing.Size(98, 24);
+            this.rbUniforme.TabIndex = 1;
+            this.rbUniforme.TabStop = true;
+            this.rbUniforme.Text = "Uniforme";
+            this.rbUniforme.UseVisualStyleBackColor = true;
+            this.rbUniforme.CheckedChanged += new System.EventHandler(this.btnUniforme_CheckedChanged);
             // 
             // rbNormal
             // 
-            rbNormal.AutoSize = true;
-            rbNormal.Location = new Point(13, 58);
-            rbNormal.Name = "rbNormal";
-            rbNormal.Size = new Size(71, 21);
-            rbNormal.TabIndex = 0;
-            rbNormal.TabStop = true;
-            rbNormal.Text = "Normal";
-            rbNormal.UseVisualStyleBackColor = true;
-            rbNormal.CheckedChanged += btnNormal_CheckedChanged;
+            this.rbNormal.AutoSize = true;
+            this.rbNormal.Location = new System.Drawing.Point(13, 58);
+            this.rbNormal.Name = "rbNormal";
+            this.rbNormal.Size = new System.Drawing.Size(84, 24);
+            this.rbNormal.TabIndex = 0;
+            this.rbNormal.TabStop = true;
+            this.rbNormal.Text = "Normal";
+            this.rbNormal.UseVisualStyleBackColor = true;
+            this.rbNormal.CheckedChanged += new System.EventHandler(this.btnNormal_CheckedChanged);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(46, 191);
-            label1.Name = "label1";
-            label1.Size = new Size(159, 17);
-            label1.TabIndex = 3;
-            label1.Text = "Tamaño de muestra (N)";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tamaño de muestra (N)";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(txtDesv);
-            groupBox2.Controls.Add(txtMedia);
-            groupBox2.Controls.Add(txtLambda);
-            groupBox2.Controls.Add(txtB);
-            groupBox2.Controls.Add(txtA);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Location = new Point(42, 404);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(391, 175);
-            groupBox2.TabIndex = 4;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Datos";
+            this.groupBox2.Controls.Add(this.txtDesv);
+            this.groupBox2.Controls.Add(this.txtMedia);
+            this.groupBox2.Controls.Add(this.txtLambda);
+            this.groupBox2.Controls.Add(this.txtB);
+            this.groupBox2.Controls.Add(this.txtA);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(42, 404);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(391, 175);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos";
             // 
             // txtDesv
             // 
-            txtDesv.Location = new Point(218, 126);
-            txtDesv.Name = "txtDesv";
-            txtDesv.Size = new Size(100, 23);
-            txtDesv.TabIndex = 22;
+            this.txtDesv.Location = new System.Drawing.Point(218, 126);
+            this.txtDesv.Name = "txtDesv";
+            this.txtDesv.Size = new System.Drawing.Size(100, 27);
+            this.txtDesv.TabIndex = 22;
             // 
             // txtMedia
             // 
-            txtMedia.Location = new Point(61, 126);
-            txtMedia.Name = "txtMedia";
-            txtMedia.Size = new Size(100, 23);
-            txtMedia.TabIndex = 21;
+            this.txtMedia.Location = new System.Drawing.Point(61, 126);
+            this.txtMedia.Name = "txtMedia";
+            this.txtMedia.Size = new System.Drawing.Size(100, 27);
+            this.txtMedia.TabIndex = 21;
             // 
             // txtLambda
             // 
-            txtLambda.Location = new Point(63, 83);
-            txtLambda.Name = "txtLambda";
-            txtLambda.Size = new Size(100, 23);
-            txtLambda.TabIndex = 20;
+            this.txtLambda.Location = new System.Drawing.Point(63, 83);
+            this.txtLambda.Name = "txtLambda";
+            this.txtLambda.Size = new System.Drawing.Size(100, 27);
+            this.txtLambda.TabIndex = 20;
             // 
             // txtB
             // 
-            txtB.Location = new Point(219, 38);
-            txtB.Name = "txtB";
-            txtB.Size = new Size(100, 23);
-            txtB.TabIndex = 15;
+            this.txtB.Location = new System.Drawing.Point(219, 38);
+            this.txtB.Name = "txtB";
+            this.txtB.Size = new System.Drawing.Size(100, 27);
+            this.txtB.TabIndex = 15;
             // 
             // txtA
             // 
-            txtA.Location = new Point(61, 41);
-            txtA.Name = "txtA";
-            txtA.Size = new Size(100, 23);
-            txtA.TabIndex = 14;
+            this.txtA.Location = new System.Drawing.Point(61, 41);
+            this.txtA.Name = "txtA";
+            this.txtA.Size = new System.Drawing.Size(100, 27);
+            this.txtA.TabIndex = 14;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(34, 86);
-            label6.Name = "label6";
-            label6.Size = new Size(16, 18);
-            label6.TabIndex = 15;
-            label6.Text = "λ";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(34, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 22);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "λ";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(191, 44);
-            label3.Name = "label3";
-            label3.Size = new Size(17, 17);
-            label3.TabIndex = 8;
-            label3.Text = "B";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(191, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "B";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(191, 126);
-            label5.Name = "label5";
-            label5.Size = new Size(17, 18);
-            label5.TabIndex = 14;
-            label5.Text = "σ";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(191, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 22);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "σ";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(33, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(17, 17);
-            label2.TabIndex = 7;
-            label2.Text = "A";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "A";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(31, 126);
-            label4.Name = "label4";
-            label4.Size = new Size(16, 18);
-            label4.TabIndex = 13;
-            label4.Text = "μ";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(31, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 22);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "μ";
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(rb23);
-            groupBox3.Controls.Add(rb12);
-            groupBox3.Controls.Add(rb16);
-            groupBox3.Controls.Add(rb10);
-            groupBox3.Location = new Point(42, 255);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(391, 108);
-            groupBox3.TabIndex = 5;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Intervalos";
+            this.groupBox3.Controls.Add(this.rb23);
+            this.groupBox3.Controls.Add(this.rb12);
+            this.groupBox3.Controls.Add(this.rb16);
+            this.groupBox3.Controls.Add(this.rb10);
+            this.groupBox3.Location = new System.Drawing.Point(42, 255);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(391, 108);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Intervalos";
             // 
             // rb23
             // 
-            rb23.AutoSize = true;
-            rb23.Location = new Point(257, 58);
-            rb23.Name = "rb23";
-            rb23.Size = new Size(42, 21);
-            rb23.TabIndex = 3;
-            rb23.TabStop = true;
-            rb23.Text = "23";
-            rb23.UseVisualStyleBackColor = true;
+            this.rb23.AutoSize = true;
+            this.rb23.Location = new System.Drawing.Point(257, 58);
+            this.rb23.Name = "rb23";
+            this.rb23.Size = new System.Drawing.Size(48, 24);
+            this.rb23.TabIndex = 3;
+            this.rb23.TabStop = true;
+            this.rb23.Text = "23";
+            this.rb23.UseVisualStyleBackColor = true;
             // 
             // rb12
             // 
-            rb12.AutoSize = true;
-            rb12.Location = new Point(98, 58);
-            rb12.Name = "rb12";
-            rb12.Size = new Size(42, 21);
-            rb12.TabIndex = 2;
-            rb12.TabStop = true;
-            rb12.Text = "12";
-            rb12.UseVisualStyleBackColor = true;
+            this.rb12.AutoSize = true;
+            this.rb12.Location = new System.Drawing.Point(98, 58);
+            this.rb12.Name = "rb12";
+            this.rb12.Size = new System.Drawing.Size(48, 24);
+            this.rb12.TabIndex = 2;
+            this.rb12.TabStop = true;
+            this.rb12.Text = "12";
+            this.rb12.UseVisualStyleBackColor = true;
             // 
             // rb16
             // 
-            rb16.AutoSize = true;
-            rb16.Location = new Point(182, 58);
-            rb16.Name = "rb16";
-            rb16.Size = new Size(42, 21);
-            rb16.TabIndex = 1;
-            rb16.TabStop = true;
-            rb16.Text = "16";
-            rb16.UseVisualStyleBackColor = true;
+            this.rb16.AutoSize = true;
+            this.rb16.Location = new System.Drawing.Point(182, 58);
+            this.rb16.Name = "rb16";
+            this.rb16.Size = new System.Drawing.Size(48, 24);
+            this.rb16.TabIndex = 1;
+            this.rb16.TabStop = true;
+            this.rb16.Text = "16";
+            this.rb16.UseVisualStyleBackColor = true;
             // 
             // rb10
             // 
-            rb10.AutoSize = true;
-            rb10.Location = new Point(28, 58);
-            rb10.Name = "rb10";
-            rb10.Size = new Size(42, 21);
-            rb10.TabIndex = 0;
-            rb10.TabStop = true;
-            rb10.Text = "10";
-            rb10.UseVisualStyleBackColor = true;
+            this.rb10.AutoSize = true;
+            this.rb10.Location = new System.Drawing.Point(28, 58);
+            this.rb10.Name = "rb10";
+            this.rb10.Size = new System.Drawing.Size(48, 24);
+            this.rb10.TabIndex = 0;
+            this.rb10.TabStop = true;
+            this.rb10.Text = "10";
+            this.rb10.UseVisualStyleBackColor = true;
             // 
             // txtTamañoMuestra
             // 
-            txtTamañoMuestra.Location = new Point(261, 191);
-            txtTamañoMuestra.Mask = "9999999";
-            txtTamañoMuestra.Name = "txtTamañoMuestra";
-            txtTamañoMuestra.Size = new Size(125, 23);
-            txtTamañoMuestra.TabIndex = 6;
+            this.txtTamañoMuestra.Location = new System.Drawing.Point(261, 191);
+            this.txtTamañoMuestra.Mask = "9999999";
+            this.txtTamañoMuestra.Name = "txtTamañoMuestra";
+            this.txtTamañoMuestra.Size = new System.Drawing.Size(125, 27);
+            this.txtTamañoMuestra.TabIndex = 6;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(55, 597);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(136, 60);
-            btnLimpiar.TabIndex = 7;
-            btnLimpiar.Text = "Limpiar campos";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
+            this.btnLimpiar.Location = new System.Drawing.Point(55, 597);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(136, 60);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar campos";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGenerar
             // 
-            btnGenerar.Location = new Point(224, 597);
-            btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(136, 60);
-            btnGenerar.TabIndex = 8;
-            btnGenerar.Text = "Generar números";
-            btnGenerar.UseVisualStyleBackColor = true;
-            btnGenerar.Click += btnGenerar_Click;
+            this.btnGenerar.Location = new System.Drawing.Point(224, 597);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(136, 60);
+            this.btnGenerar.TabIndex = 8;
+            this.btnGenerar.Text = "Generar números";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // chartFrecuencia
             // 
             chartArea1.Name = "ChartArea1";
-            chartFrecuencia.ChartAreas.Add(chartArea1);
+            this.chartFrecuencia.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            chartFrecuencia.Legends.Add(legend1);
-            chartFrecuencia.Location = new Point(458, 518);
-            chartFrecuencia.Name = "chartFrecuencia";
-            chartFrecuencia.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.chartFrecuencia.Legends.Add(legend1);
+            this.chartFrecuencia.Location = new System.Drawing.Point(460, 537);
+            this.chartFrecuencia.Name = "chartFrecuencia";
+            this.chartFrecuencia.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            chartFrecuencia.Series.Add(series1);
-            chartFrecuencia.Size = new Size(546, 258);
-            chartFrecuencia.TabIndex = 12;
-            chartFrecuencia.Text = "Tabla de frecuencias";
-            // 
-            // grillaConFEAgrupada
-            // 
-            grillaConFEAgrupada.AllowUserToAddRows = false;
-            grillaConFEAgrupada.AllowUserToDeleteRows = false;
-            grillaConFEAgrupada.BackgroundColor = Color.Lavender;
-            grillaConFEAgrupada.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grillaConFEAgrupada.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            grillaConFEAgrupada.Location = new Point(1027, 385);
-            grillaConFEAgrupada.Name = "grillaConFEAgrupada";
-            grillaConFEAgrupada.ReadOnly = true;
-            grillaConFEAgrupada.RowHeadersWidth = 51;
-            grillaConFEAgrupada.RowTemplate.Height = 29;
-            grillaConFEAgrupada.Size = new Size(676, 335);
-            grillaConFEAgrupada.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Intervalo";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "LI";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "LS";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.HeaderText = "FO";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.HeaderText = "FE";
-            dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            dataGridViewTextBoxColumn5.Width = 125;
+            this.chartFrecuencia.Series.Add(series1);
+            this.chartFrecuencia.Size = new System.Drawing.Size(546, 258);
+            this.chartFrecuencia.TabIndex = 12;
+            this.chartFrecuencia.Text = "Tabla de frecuencias";
             // 
             // txtValorTabulado
             // 
-            txtValorTabulado.Location = new Point(824, 104);
-            txtValorTabulado.Name = "txtValorTabulado";
-            txtValorTabulado.ReadOnly = true;
-            txtValorTabulado.Size = new Size(100, 23);
-            txtValorTabulado.TabIndex = 14;
+            this.txtValorTabulado.Location = new System.Drawing.Point(814, 89);
+            this.txtValorTabulado.Name = "txtValorTabulado";
+            this.txtValorTabulado.ReadOnly = true;
+            this.txtValorTabulado.Size = new System.Drawing.Size(100, 27);
+            this.txtValorTabulado.TabIndex = 14;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(822, 66);
-            label7.Name = "label7";
-            label7.Size = new Size(122, 17);
-            label7.TabIndex = 15;
-            label7.Text = "Chi valor tabulado";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(811, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "CHI tabulado";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(825, 145);
-            label8.Name = "label8";
-            label8.Size = new Size(72, 17);
-            label8.TabIndex = 16;
-            label8.Text = "Resultado";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(814, 130);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 20);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Resultado";
             // 
             // lbl_resHipotesis
             // 
-            lbl_resHipotesis.AutoSize = true;
-            lbl_resHipotesis.Location = new Point(825, 178);
-            lbl_resHipotesis.Name = "lbl_resHipotesis";
-            lbl_resHipotesis.Size = new Size(16, 17);
-            lbl_resHipotesis.TabIndex = 17;
-            lbl_resHipotesis.Text = "..";
+            this.lbl_resHipotesis.AutoSize = true;
+            this.lbl_resHipotesis.Location = new System.Drawing.Point(814, 160);
+            this.lbl_resHipotesis.Name = "lbl_resHipotesis";
+            this.lbl_resHipotesis.Size = new System.Drawing.Size(17, 20);
+            this.lbl_resHipotesis.TabIndex = 17;
+            this.lbl_resHipotesis.Text = "..";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Intervalo";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "LI";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "LS";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "FO";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "FE";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // po
+            // 
+            this.po.HeaderText = "PO";
+            this.po.MinimumWidth = 6;
+            this.po.Name = "po";
+            this.po.Width = 125;
+            // 
+            // pe
+            // 
+            this.pe.HeaderText = "PE";
+            this.pe.MinimumWidth = 6;
+            this.pe.Name = "pe";
+            this.pe.Width = 125;
+            // 
+            // po_ac
+            // 
+            this.po_ac.HeaderText = "PO AC";
+            this.po_ac.MinimumWidth = 6;
+            this.po_ac.Name = "po_ac";
+            this.po_ac.Width = 125;
+            // 
+            // pe_ac
+            // 
+            this.pe_ac.HeaderText = "PE AC";
+            this.pe_ac.MinimumWidth = 6;
+            this.pe_ac.Name = "pe_ac";
+            this.pe_ac.Width = 125;
+            // 
+            // grillaKS
+            // 
+            this.grillaKS.AllowUserToAddRows = false;
+            this.grillaKS.AllowUserToDeleteRows = false;
+            this.grillaKS.BackgroundColor = System.Drawing.Color.Lavender;
+            this.grillaKS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaKS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.intervaloKS,
+            this.limInfKS,
+            this.limSupKS,
+            this.foKS,
+            this.feKS,
+            this.probObs,
+            this.probEsp,
+            this.totalProbObs,
+            this.totalProbEsp,
+            this.difProbabilidades,
+            this.maxKS});
+            this.grillaKS.Location = new System.Drawing.Point(1027, 393);
+            this.grillaKS.Name = "grillaKS";
+            this.grillaKS.ReadOnly = true;
+            this.grillaKS.RowHeadersWidth = 51;
+            this.grillaKS.RowTemplate.Height = 29;
+            this.grillaKS.Size = new System.Drawing.Size(676, 360);
+            this.grillaKS.TabIndex = 18;
+            // 
+            // intervaloKS
+            // 
+            this.intervaloKS.HeaderText = "Intervalo";
+            this.intervaloKS.MinimumWidth = 6;
+            this.intervaloKS.Name = "intervaloKS";
+            this.intervaloKS.ReadOnly = true;
+            this.intervaloKS.Width = 125;
+            // 
+            // limInfKS
+            // 
+            this.limInfKS.HeaderText = "LI";
+            this.limInfKS.MinimumWidth = 6;
+            this.limInfKS.Name = "limInfKS";
+            this.limInfKS.ReadOnly = true;
+            this.limInfKS.Width = 125;
+            // 
+            // limSupKS
+            // 
+            this.limSupKS.HeaderText = "LS";
+            this.limSupKS.MinimumWidth = 6;
+            this.limSupKS.Name = "limSupKS";
+            this.limSupKS.ReadOnly = true;
+            this.limSupKS.Width = 125;
+            // 
+            // foKS
+            // 
+            this.foKS.HeaderText = "FO";
+            this.foKS.MinimumWidth = 6;
+            this.foKS.Name = "foKS";
+            this.foKS.ReadOnly = true;
+            this.foKS.Width = 125;
+            // 
+            // feKS
+            // 
+            this.feKS.HeaderText = "FE";
+            this.feKS.MinimumWidth = 6;
+            this.feKS.Name = "feKS";
+            this.feKS.ReadOnly = true;
+            this.feKS.Width = 125;
+            // 
+            // probObs
+            // 
+            this.probObs.HeaderText = "PO";
+            this.probObs.MinimumWidth = 6;
+            this.probObs.Name = "probObs";
+            this.probObs.ReadOnly = true;
+            this.probObs.Width = 125;
+            // 
+            // probEsp
+            // 
+            this.probEsp.HeaderText = "PE";
+            this.probEsp.MinimumWidth = 6;
+            this.probEsp.Name = "probEsp";
+            this.probEsp.ReadOnly = true;
+            this.probEsp.Width = 125;
+            // 
+            // totalProbObs
+            // 
+            this.totalProbObs.HeaderText = "PO AC";
+            this.totalProbObs.MinimumWidth = 6;
+            this.totalProbObs.Name = "totalProbObs";
+            this.totalProbObs.ReadOnly = true;
+            this.totalProbObs.Width = 125;
+            // 
+            // totalProbEsp
+            // 
+            this.totalProbEsp.HeaderText = "PE AC";
+            this.totalProbEsp.MinimumWidth = 6;
+            this.totalProbEsp.Name = "totalProbEsp";
+            this.totalProbEsp.ReadOnly = true;
+            this.totalProbEsp.Width = 125;
+            // 
+            // difProbabilidades
+            // 
+            this.difProbabilidades.HeaderText = "PO AC - PE AC";
+            this.difProbabilidades.MinimumWidth = 6;
+            this.difProbabilidades.Name = "difProbabilidades";
+            this.difProbabilidades.ReadOnly = true;
+            this.difProbabilidades.Width = 125;
+            // 
+            // maxKS
+            // 
+            this.maxKS.HeaderText = "MAX KS";
+            this.maxKS.MinimumWidth = 6;
+            this.maxKS.Name = "maxKS";
+            this.maxKS.ReadOnly = true;
+            this.maxKS.Width = 125;
+            // 
+            // lbl_resHipotesisKS
+            // 
+            this.lbl_resHipotesisKS.AutoSize = true;
+            this.lbl_resHipotesisKS.Location = new System.Drawing.Point(811, 487);
+            this.lbl_resHipotesisKS.Name = "lbl_resHipotesisKS";
+            this.lbl_resHipotesisKS.Size = new System.Drawing.Size(17, 20);
+            this.lbl_resHipotesisKS.TabIndex = 22;
+            this.lbl_resHipotesisKS.Text = "..";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(808, 456);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 20);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Resultado";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(808, 393);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 20);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "KS tabulado";
+            // 
+            // txtKSTabulado
+            // 
+            this.txtKSTabulado.Location = new System.Drawing.Point(811, 418);
+            this.txtKSTabulado.Name = "txtKSTabulado";
+            this.txtKSTabulado.ReadOnly = true;
+            this.txtKSTabulado.Size = new System.Drawing.Size(100, 27);
+            this.txtKSTabulado.TabIndex = 19;
             // 
             // Generador
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1736, 807);
-            Controls.Add(lbl_resHipotesis);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(txtValorTabulado);
-            Controls.Add(grillaConFEAgrupada);
-            Controls.Add(chartFrecuencia);
-            Controls.Add(btnGenerar);
-            Controls.Add(btnLimpiar);
-            Controls.Add(txtTamañoMuestra);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
-            Controls.Add(label1);
-            Controls.Add(groupBox1);
-            Controls.Add(grillaAleatorios);
-            Controls.Add(grillaFrecuencias);
-            Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = Color.Black;
-            Margin = new Padding(4, 3, 4, 3);
-            Name = "Generador";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Simulador";
-            ((System.ComponentModel.ISupportInitialize)grillaFrecuencias).EndInit();
-            ((System.ComponentModel.ISupportInitialize)grillaAleatorios).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chartFrecuencia).EndInit();
-            ((System.ComponentModel.ISupportInitialize)grillaConFEAgrupada).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1736, 807);
+            this.Controls.Add(this.lbl_resHipotesisKS);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtKSTabulado);
+            this.Controls.Add(this.grillaKS);
+            this.Controls.Add(this.lbl_resHipotesis);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtValorTabulado);
+            this.Controls.Add(this.chartFrecuencia);
+            this.Controls.Add(this.btnGenerar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.txtTamañoMuestra);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grillaAleatorios);
+            this.Controls.Add(this.grillaFrecuencias);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "Generador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Simulador";
+            ((System.ComponentModel.ISupportInitialize)(this.grillaFrecuencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaAleatorios)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFrecuencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaKS)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -600,12 +799,6 @@
         private Button btnLimpiar;
         private Button btnGenerar;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFrecuencia;
-        private DataGridView grillaConFEAgrupada;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private TextBox txtMedia;
         private TextBox txtLambda;
         private TextBox txtB;
@@ -616,5 +809,30 @@
         private Label label7;
         private Label label8;
         private Label lbl_resHipotesis;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn po;
+        private DataGridViewTextBoxColumn pe;
+        private DataGridViewTextBoxColumn po_ac;
+        private DataGridViewTextBoxColumn pe_ac;
+        private DataGridView grillaKS;
+        private DataGridViewTextBoxColumn intervaloKS;
+        private DataGridViewTextBoxColumn limInfKS;
+        private DataGridViewTextBoxColumn limSupKS;
+        private DataGridViewTextBoxColumn foKS;
+        private DataGridViewTextBoxColumn feKS;
+        private DataGridViewTextBoxColumn probObs;
+        private DataGridViewTextBoxColumn probEsp;
+        private DataGridViewTextBoxColumn totalProbObs;
+        private DataGridViewTextBoxColumn totalProbEsp;
+        private DataGridViewTextBoxColumn difProbabilidades;
+        private DataGridViewTextBoxColumn maxKS;
+        private Label lbl_resHipotesisKS;
+        private Label label10;
+        private Label label11;
+        private TextBox txtKSTabulado;
     }
 }

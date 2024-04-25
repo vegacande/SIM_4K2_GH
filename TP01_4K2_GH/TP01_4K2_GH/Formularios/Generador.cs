@@ -88,6 +88,12 @@ namespace TP01_4K2_GH.Formularios
             grillaAleatorios.Rows.Clear();
             grillaFrecuencias.Rows.Clear();
             chartFrecuencia.Series.Clear();
+
+            txtValorTabulado.Text = "";
+            lbl_resHipotesis.Text = "";
+            txtKSTabulado.Text = "";
+            lbl_resHipotesisKS.Text = "";
+            grillaKS.Rows.Clear();
         }
 
         private void btnUniforme_CheckedChanged(object sender, EventArgs e)
@@ -120,7 +126,6 @@ namespace TP01_4K2_GH.Formularios
             txtDesv.Enabled = true;
             txtMedia.Enabled = true;
         }
-
 
 
         /// <summary>
@@ -241,6 +246,7 @@ namespace TP01_4K2_GH.Formularios
         {
             grillaAleatorios.Rows.Clear();
             List<double> lista = new List<double>();
+            //List<double> lista2 = new List<double>();
             Random rnd = new Random();
             for (int i = 0; i < int.Parse(txtTamañoMuestra.Text.ToString()); i++)
             {
@@ -248,7 +254,10 @@ namespace TP01_4K2_GH.Formularios
                 double random1 = randomDoubleRandom(rnd);
                 double random2 = randomDoubleRandom(rnd);
                 double num = truncarNumero(((((Math.Sqrt(-2 * Math.Log(random1)) * Math.Cos(2 * Math.PI * random2))) * double.Parse(txtDesv.Text.ToString())) + double.Parse(txtMedia.Text.ToString())));
+                // generar num2
+                //double num2 = truncarNumero(((((Math.Sqrt(-2 * Math.Log(random1)) * Math.Sin(2 * Math.PI * random2))) * double.Parse(txtDesv.Text.ToString())) + double.Parse(txtMedia.Text.ToString())));
                 lista.Add(num);
+                //lista2.Add(num2);
                 grillaAleatorios.Rows.Add(i + 1, num);
                 //prbCargaNumeros.Value = i + 1;
             }
@@ -273,12 +282,19 @@ namespace TP01_4K2_GH.Formularios
             double chi = 0;
             double fo = 0;
             double totalChi = 0;
+            double probObs = 0;
+            double probEsp = 0;
+            double probOssAcumulada = 0;
+            double probEspAcumulada = 0;
+            double difProbabilidades = 0;
+            double maxKS = 0;
 
             for (int i = 0; i < cantIntervalos; i++)
             {
                 if (rbUniforme.Checked) //Uniforme
                 {
-                    frecuenciaEsp = double.Parse(txtTamañoMuestra.Text.ToString()) / cantIntervalos;
+                    frecuenciaEsp = double.Parse(txtTamañoMuestra.Text.ToString()) / cantIntervalos;            
+
                 }
                 else if (rbExponencial.Checked) //Exponencial
                 {
@@ -292,6 +308,7 @@ namespace TP01_4K2_GH.Formularios
                     double expInf = 1 - Math.Exp(Convert.ToDouble(tablaFO.Rows[i]["LI"]) * (-lambda));
                     int N = int.Parse(txtTamañoMuestra.Text.ToString());
                     frecuenciaEsp = (expSup - expInf) * N;
+
                 }
                 else if (rbNormal.Checked) //Normal
                 {
@@ -301,6 +318,55 @@ namespace TP01_4K2_GH.Formularios
                     double NormalInf = calcularFrecuenciaEsperadaNormal(Convert.ToDouble(tablaFO.Rows[i]["LI"]));
                     //calculo de la FE final para cada intervalo
                     frecuenciaEsp = (NormalSup - NormalInf) * N;
+                                 
+                }
+
+                /*
+                //Para resolver el problema de FE < 5
+                // (cambian los intervalos, los límites, y las frecuencias)
+                if (frecuenciaEsp < 5)
+                {
+                    double frecuenciaEspAgrupada = 0;
+                    int frecuenciaObsAgrupada = 0;
+                    int primerIntervalo = i;
+
+                    while (frecuenciaEspAgrupada < 5 && i < cantIntervalos)
+                    {
+                        frecuenciaEspAgrupada += frecuenciaEsp;
+                        frecuenciaObsAgrupada += Convert.ToInt32(tablaFO.Rows[i]["FO"]);
+
+                        // Pasar al siguiente intervalo
+                        i++;
+
+                        // Salir del bucle si se alcanza el final de los intervalos
+                        if (i >= cantIntervalos - 1)
+                        {
+                            break;
+                        }
+
+                    }
+
+                    // Retroceder un índice para ajustarse al último intervalo agrupado
+                    i--;
+
+                    // Actualizar la tabla de frecuencias observadas con la frecuencia observada agrupada
+                    tablaFO.Rows[primerIntervalo]["FO"] = frecuenciaObsAgrupada;
+                    tablaFO.Rows[primerIntervalo]["FE"] = frecuenciaEspAgrupada;
+                    tablaFO.Rows[primerIntervalo]["Intervalo"]
+                    tablaFO.Rows[primerIntervalo]["LI"]
+                    tablaFO.Rows[primerIntervalo]["LO"]
+
+                }  */
+
+                // cálculos KS, es igual para todas las distribuciones
+                probObs = Convert.ToDouble(tablaFO.Rows[i]["FO"]) / double.Parse(txtTamañoMuestra.Text);
+                probEsp = frecuenciaEsp / double.Parse(txtTamañoMuestra.Text);
+                probOssAcumulada += probObs;
+                probEspAcumulada += probEsp;
+                difProbabilidades = Math.Abs(probOssAcumulada - probEspAcumulada);
+                if (difProbabilidades > maxKS)
+                {
+                    maxKS = difProbabilidades;
                 }
 
                 totalFrecObs += truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"]));
@@ -310,10 +376,15 @@ namespace TP01_4K2_GH.Formularios
                 chi = Math.Pow(diferencia, 2) / frecuenciaEsp;
                 totalChi += chi;
                 grillaFrecuencias.Rows.Add(truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["Intervalo"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LI"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LS"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"])), truncarNumero(frecuenciaEsp), truncarNumero(chi));
+
+                // KS
+                grillaKS.Rows.Add(truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["Intervalo"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LI"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LS"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"])), truncarNumero(frecuenciaEsp), truncarNumero(probObs), truncarNumero(probEsp), truncarNumero(probOssAcumulada), truncarNumero(probEspAcumulada), truncarNumero(difProbabilidades), truncarNumero(maxKS));
             }
             grillaFrecuencias.Rows.Add("", "", "", truncarNumero(totalFrecObs), truncarNumero(totalFrecEsp), truncarNumero(totalChi));
+
             generarHistograma(tablaFO);
             ValidarHipotesis(totalChi, cantIntervalos);
+            validarHipotesisKS(maxKS);
         }
 
         private void ValidarHipotesis(double totalChi, int k)
@@ -331,6 +402,20 @@ namespace TP01_4K2_GH.Formularios
                 lbl_resHipotesis.Text = "No se rechaza la hipotesis.";
             else
                 lbl_resHipotesis.Text = "Se rechaza la hipotesis.";
+        }
+
+        private void validarHipotesisKS(double maxKS)
+        {
+            double valorTabulado = 1.22 / Math.Sqrt(double.Parse(txtTamañoMuestra.Text));
+            txtKSTabulado.Text = truncarNumero(valorTabulado).ToString();
+            if( valorTabulado > maxKS)
+            {
+                lbl_resHipotesisKS.Text = "No se rechaza la hipótesis.";
+            }
+            else
+            {
+                lbl_resHipotesisKS.Text = "Se rechaza la hipótesis.";
+            }
         }
 
         private double CalcularValorTab(int k)
@@ -426,5 +511,8 @@ namespace TP01_4K2_GH.Formularios
 
             return random;
         }
+
+       
+
     }
 }
