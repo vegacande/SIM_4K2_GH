@@ -87,6 +87,7 @@ namespace TP01_4K2_GH.Formularios
             txtTamañoMuestra.Text = "";
             grillaAleatorios.Rows.Clear();
             grillaFrecuencias.Rows.Clear();
+            grillaKS.Rows.Clear();
             chartFrecuencia.Series.Clear();
 
             txtValorTabulado.Text = "";
@@ -154,6 +155,7 @@ namespace TP01_4K2_GH.Formularios
             tabla.Columns.Add("LI", typeof(double));
             tabla.Columns.Add("LS", typeof(double));
             tabla.Columns.Add("FO", typeof(int));
+            tabla.Columns.Add("FE", typeof(double));
             double limInf = minimo;
             double limSup = 0;
 
@@ -223,6 +225,7 @@ namespace TP01_4K2_GH.Formularios
             grillaAleatorios.Rows.Clear();
             List<double> lista = new List<double>();
             double lambda;
+
             if (txtLambda.Text == "") lambda = 1 / double.Parse(txtMedia.Text.ToString());
             else lambda = double.Parse(txtLambda.Text.ToString());
 
@@ -271,6 +274,7 @@ namespace TP01_4K2_GH.Formularios
         private void generarTablaFrecuencias(List<double> lista)
         {
             grillaFrecuencias.Rows.Clear();
+            grillaKS.Rows.Clear();
             cantIntervalos = 10;
             if (rb12.Checked) cantIntervalos = 12;
             else if (rb16.Checked) cantIntervalos = 16;
@@ -293,7 +297,7 @@ namespace TP01_4K2_GH.Formularios
             {
                 if (rbUniforme.Checked) //Uniforme
                 {
-                    frecuenciaEsp = double.Parse(txtTamañoMuestra.Text.ToString()) / cantIntervalos;            
+                    frecuenciaEsp = double.Parse(txtTamañoMuestra.Text.ToString()) / cantIntervalos;
 
                 }
                 else if (rbExponencial.Checked) //Exponencial
@@ -318,45 +322,9 @@ namespace TP01_4K2_GH.Formularios
                     double NormalInf = calcularFrecuenciaEsperadaNormal(Convert.ToDouble(tablaFO.Rows[i]["LI"]));
                     //calculo de la FE final para cada intervalo
                     frecuenciaEsp = (NormalSup - NormalInf) * N;
-                                 
+
                 }
 
-                /*
-                //Para resolver el problema de FE < 5
-                // (cambian los intervalos, los límites, y las frecuencias)
-                if (frecuenciaEsp < 5)
-                {
-                    double frecuenciaEspAgrupada = 0;
-                    int frecuenciaObsAgrupada = 0;
-                    int primerIntervalo = i;
-
-                    while (frecuenciaEspAgrupada < 5 && i < cantIntervalos)
-                    {
-                        frecuenciaEspAgrupada += frecuenciaEsp;
-                        frecuenciaObsAgrupada += Convert.ToInt32(tablaFO.Rows[i]["FO"]);
-
-                        // Pasar al siguiente intervalo
-                        i++;
-
-                        // Salir del bucle si se alcanza el final de los intervalos
-                        if (i >= cantIntervalos - 1)
-                        {
-                            break;
-                        }
-
-                    }
-
-                    // Retroceder un índice para ajustarse al último intervalo agrupado
-                    i--;
-
-                    // Actualizar la tabla de frecuencias observadas con la frecuencia observada agrupada
-                    tablaFO.Rows[primerIntervalo]["FO"] = frecuenciaObsAgrupada;
-                    tablaFO.Rows[primerIntervalo]["FE"] = frecuenciaEspAgrupada;
-                    tablaFO.Rows[primerIntervalo]["Intervalo"]
-                    tablaFO.Rows[primerIntervalo]["LI"]
-                    tablaFO.Rows[primerIntervalo]["LO"]
-
-                }  */
 
                 // cálculos KS, es igual para todas las distribuciones
                 probObs = Convert.ToDouble(tablaFO.Rows[i]["FO"]) / double.Parse(txtTamañoMuestra.Text);
@@ -369,17 +337,44 @@ namespace TP01_4K2_GH.Formularios
                     maxKS = difProbabilidades;
                 }
 
-                totalFrecObs += truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"]));
-                totalFrecEsp += frecuenciaEsp;
-                fo = truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"]));
-                double diferencia = fo - frecuenciaEsp;
-                chi = Math.Pow(diferencia, 2) / frecuenciaEsp;
-                totalChi += chi;
-                grillaFrecuencias.Rows.Add(truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["Intervalo"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LI"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LS"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"])), truncarNumero(frecuenciaEsp), truncarNumero(chi));
+
+                // chequear
+                tablaFO.Rows[i]["FE"] = frecuenciaEsp;
+
 
                 // KS
                 grillaKS.Rows.Add(truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["Intervalo"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LI"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["LS"])), truncarNumero(Convert.ToDouble(tablaFO.Rows[i]["FO"])), truncarNumero(frecuenciaEsp), truncarNumero(probObs), truncarNumero(probEsp), truncarNumero(probOssAcumulada), truncarNumero(probEspAcumulada), truncarNumero(difProbabilidades), truncarNumero(maxKS));
             }
+
+          
+            DataTable tabla = new DataTable();
+
+            tabla = agruparIntervalos(tablaFO);
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                fo = truncarNumero(Convert.ToDouble(tabla.Rows[i]["FO"]));
+                double fe = truncarNumero(Convert.ToDouble(tabla.Rows[i]["FE"]));
+                totalFrecObs += fo;
+                totalFrecEsp += fe;
+
+                double diferencia = fo - fe;
+                chi = Math.Pow(diferencia, 2) / fe;
+                totalChi += chi;
+
+
+
+                // Añadir filas a la grilla de frecuencias
+                grillaFrecuencias.Rows.Add(
+                    tabla.Rows[i]["Intervalo"].ToString(), // No convertir, ya es una cadena
+                    truncarNumero(Convert.ToDouble(tabla.Rows[i]["LI"])),
+                    truncarNumero(Convert.ToDouble(tabla.Rows[i]["LS"])),
+                    truncarNumero(Convert.ToInt32(tabla.Rows[i]["FO"])),  // FO es un entero
+                    truncarNumero(Convert.ToDouble(tabla.Rows[i]["FE"])),
+                    truncarNumero(chi)
+                );
+            }
+
             grillaFrecuencias.Rows.Add("", "", "", truncarNumero(totalFrecObs), truncarNumero(totalFrecEsp), truncarNumero(totalChi));
 
             generarHistograma(tablaFO);
@@ -408,7 +403,7 @@ namespace TP01_4K2_GH.Formularios
         {
             double valorTabulado = 1.22 / Math.Sqrt(double.Parse(txtTamañoMuestra.Text));
             txtKSTabulado.Text = truncarNumero(valorTabulado).ToString();
-            if( valorTabulado > maxKS)
+            if (valorTabulado > maxKS)
             {
                 lbl_resHipotesisKS.Text = "No se rechaza la hipótesis.";
             }
@@ -423,7 +418,7 @@ namespace TP01_4K2_GH.Formularios
             int m = 0;
             if (rbUniforme.Checked)
             {
-                m = 2;
+                m = 0;
             }
 
             else if (rbExponencial.Checked)
@@ -435,7 +430,7 @@ namespace TP01_4K2_GH.Formularios
                 m = 2;
             }
 
-            double gradosLibertad = k-1-m; // Los grados de libertad para la distribución chi-cuadrado
+            double gradosLibertad = k - 1 - m; // Los grados de libertad para la distribución chi-cuadrado
             double probabilidad = 0.1; // El nivel de significancia (por ejemplo, 0.05 para un nivel de confianza del 95%)
 
             // Calcula el valor chi-cuadrado tabulado para el nivel de significancia dado y los grados de libertad
@@ -444,11 +439,7 @@ namespace TP01_4K2_GH.Formularios
             return chiCuadradoTabulado;
         }
 
-        /// <summary>
-        /// Calculo de la frecuencia esperada con biblioteca Math.Numerics
-        /// </summary>
-        /// <param name="lim">limite considerado para el calculo</param>
-        /// <returns>frecuencia esperada de la distribucion normal</returns>
+
         private double calcularFrecuenciaEsperadaNormal(double lim)
         {
             double media = double.Parse(txtMedia.Text.ToString());
@@ -512,7 +503,64 @@ namespace TP01_4K2_GH.Formularios
             return random;
         }
 
-       
+        private DataTable agruparIntervalos(DataTable tabla)
+        {
+
+            DataTable agrupado = new DataTable();
+            agrupado.Columns.Add("Intervalo", typeof(string));
+            agrupado.Columns.Add("LI", typeof(double));
+            agrupado.Columns.Add("LS", typeof(double));
+            agrupado.Columns.Add("FO", typeof(int));
+            agrupado.Columns.Add("FE", typeof(double));
+
+            DataRow filaAgrupada = null;
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                double LIactual = Convert.ToDouble(fila["LI"]);
+                double LSactual = Convert.ToDouble(fila["LS"]);
+                int FOactual = Convert.ToInt32(fila["FO"]);
+                double FEactual = Convert.ToDouble(fila["FE"]);
+
+                if (filaAgrupada == null || Convert.ToDouble(filaAgrupada["FE"]) >= 5)
+                {
+                    if (filaAgrupada != null)
+                    {
+                        agrupado.Rows.Add(filaAgrupada.ItemArray);
+                    }
+                    filaAgrupada = agrupado.NewRow();
+                    filaAgrupada["Intervalo"] = fila["Intervalo"].ToString();
+                    filaAgrupada["LI"] = LIactual;
+                    filaAgrupada["LS"] = LSactual;
+                    filaAgrupada["FO"] = FOactual;
+                    filaAgrupada["FE"] = FEactual;
+                }
+                else
+                {
+                    filaAgrupada["LS"] = LSactual;
+                    filaAgrupada["FO"] = Convert.ToInt32(filaAgrupada["FO"]) + FOactual;
+                    filaAgrupada["FE"] = Convert.ToDouble(filaAgrupada["FE"]) + FEactual;
+                    filaAgrupada["Intervalo"] += ", " + fila["Intervalo"].ToString();
+                }
+            }
+
+            // Verificación y manejo del último grupo si tiene FE < 5
+            if (filaAgrupada != null && Convert.ToDouble(filaAgrupada["FE"]) < 5 && agrupado.Rows.Count > 0)
+            {
+                DataRow lastRow = agrupado.Rows[agrupado.Rows.Count - 1];
+                lastRow["LS"] = Convert.ToDouble(filaAgrupada["LS"]);
+                lastRow["FO"] = Convert.ToInt32(lastRow["FO"]) + Convert.ToInt32(filaAgrupada["FO"]);
+                lastRow["FE"] = Convert.ToDouble(lastRow["FE"]) + Convert.ToDouble(filaAgrupada["FE"]);
+                lastRow["Intervalo"] = lastRow["Intervalo"].ToString() + ", " + filaAgrupada["Intervalo"].ToString();
+            }
+            else if (filaAgrupada != null)
+            {
+                agrupado.Rows.Add(filaAgrupada.ItemArray);
+            }
+
+            return agrupado;
+        }
 
     }
 }
