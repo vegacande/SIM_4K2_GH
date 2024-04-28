@@ -16,6 +16,7 @@ using Chart = System.Windows.Forms.DataVisualization.Charting.Chart;
 using Series = System.Windows.Forms.DataVisualization.Charting.Series;
 using MathNet.Numerics.Distributions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics.Eventing.Reader;
 
 namespace TP01_4K2_GH.Formularios
 {
@@ -56,11 +57,24 @@ namespace TP01_4K2_GH.Formularios
 
                 else if (rbExponencial.Checked)
                 {
-                    if ((txtLambda.Text == "" && txtMedia.Text == "") || (txtLambda.Text != "" && txtMedia.Text != ""))
+                   
+                    if ((string.IsNullOrEmpty(txtLambda.Text) && string.IsNullOrEmpty(txtMedia.Text)) || (!string.IsNullOrEmpty(txtLambda.Text) && !string.IsNullOrEmpty(txtMedia.Text)))
                     {
-                        MessageBox.Show("Debe completar el dato Lambda o Media", "Valores incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe completar solo uno de los campos Lambda o Media", "Valores incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else generarAleatoriosExponencial();
+                    else if (!string.IsNullOrEmpty(txtLambda.Text) && double.Parse(txtLambda.Text) < 0)
+                    {
+                        MessageBox.Show("Lambda debe ser positivo", "Valores incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (!string.IsNullOrEmpty(txtMedia.Text) && double.Parse(txtMedia.Text) < 0)
+                    {
+                        MessageBox.Show("Media debe ser positiva", "Valores incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        generarAleatoriosExponencial();
+                    }
+
                 }
                 else if (rbNormal.Checked)
                 {
