@@ -52,15 +52,12 @@ namespace TP3_SIM_G6
         //generacion de simulacion 
         private void generarSimulacion(int n, DataTable probTipoDemanda, DataTable probDemAlta, DataTable probDemMedia, DataTable probDemBaja)
         {
-            Fila filaAnterior = new Fila();
-            Fila filaActual = new Fila();
-
 
             // Contadores y Acumuladores
             double sobrantesAC = 0;
             double perdidasAC = 0;
             double optimoAC = 0;
-            //int cantidadRegistros = 0;
+            double ganTotalAc = 0;
 
             // Generar dias
             for (int d = 1; d <= n; d++)
@@ -70,12 +67,19 @@ namespace TP3_SIM_G6
                 Random rndDem = new Random();
                 double rndDemanda = rndDem.NextDouble();
 
+
                 int stockFacturas = int.Parse(txtStock.Text.ToString());
 
                 double sobrantes = 0;
                 double perdidas = 0;
                 double optimo = 0;
                 double demandaDia = 0;
+
+                double gananVenta = 0;
+                double costoProduc = 0;
+                double gananSobrante = 0;
+                double costoFaltante = 0;
+                double ganTotal = 0;
 
                 string tipoDemanda = BuscarTipoDemanda(probTipoDemanda, rndTipoDemanda);
 
@@ -84,46 +88,99 @@ namespace TP3_SIM_G6
                     demandaDia = BuscarDemanda(probDemAlta, rndDemanda);
                     if (stockFacturas > demandaDia)
                     {
+                        gananVenta = demandaDia * 0.25;
+                        costoProduc = stockFacturas * 0.15;
                         sobrantes = stockFacturas - demandaDia;
+                        gananSobrante = 0.08 * sobrantes;
+                        costoFaltante = 0;
+
                     }
                     if (demandaDia > stockFacturas)
                     {
+                        gananVenta = stockFacturas * 0.25;
+                        costoProduc = stockFacturas * 0.15;
                         perdidas = demandaDia - stockFacturas;
+                        gananSobrante = 0;
+                        costoFaltante = 0.1 * perdidas;
+                    }
+                    if (demandaDia == stockFacturas)
+                    {
+                        gananVenta = demandaDia * 0.25;
+                        costoProduc = stockFacturas * 0.15;
+                        perdidas = 0;
+                        gananSobrante = 0;
+                        costoFaltante = 0;
                     }
                     optimo = stockFacturas - sobrantes + perdidas;
-
+                    ganTotal = gananVenta - costoProduc + gananSobrante - costoFaltante;
                 }
                 else if (tipoDemanda == "Media")
                 {
                     demandaDia = BuscarDemanda(probDemMedia, rndDemanda);
                     if (stockFacturas > demandaDia)
                     {
+                        gananVenta = demandaDia * 0.25;
+                        costoProduc = stockFacturas * 0.15;
                         sobrantes = stockFacturas - demandaDia;
+                        gananSobrante = 0.08 * sobrantes;
+                        costoFaltante = 0;
                     }
                     if (demandaDia > stockFacturas)
                     {
+                        gananVenta = stockFacturas * 0.25;
+                        costoProduc = stockFacturas * 0.15;
                         perdidas = demandaDia - stockFacturas;
+                        gananSobrante = 0;
+                        costoFaltante = 0.1 * perdidas;
+                    }
+                    if (demandaDia == stockFacturas)
+                    {
+                        gananVenta = demandaDia * 0.25;
+                        costoProduc = stockFacturas * 0.15;
+                        perdidas = 0;
+                        gananSobrante = 0;
+                        costoFaltante = 0;
                     }
                     optimo = stockFacturas - sobrantes + perdidas;
+                    ganTotal = gananVenta - costoProduc + gananSobrante - costoFaltante;
                 }
                 else
                 {
                     demandaDia = BuscarDemanda(probDemBaja, rndDemanda);
                     if (stockFacturas > demandaDia)
                     {
+                        gananVenta = demandaDia * 0.25;
+                        costoProduc = stockFacturas * 0.15;
                         sobrantes = stockFacturas - demandaDia;
+                        gananSobrante = 0.08 * sobrantes;
+                        costoFaltante = 0;
                     }
                     if (demandaDia > stockFacturas)
                     {
+                        gananVenta = stockFacturas * 0.25;
+                        costoProduc = stockFacturas * 0.15;
                         perdidas = demandaDia - stockFacturas;
+                        gananSobrante = 0;
+                        costoFaltante = 0.1 * perdidas;
+                    }
+                    if (demandaDia == stockFacturas)
+                    {
+                        gananVenta = demandaDia * 0.25;
+                        costoProduc = stockFacturas * 0.15;
+                        perdidas = 0;
+                        gananSobrante = 0;
+                        costoFaltante = 0;
                     }
                     optimo = stockFacturas - sobrantes + perdidas;
+                    ganTotal = gananVenta - costoProduc + gananSobrante - costoFaltante;
                 }
                 sobrantesAC += sobrantes;
                 perdidasAC += perdidas;
                 optimoAC += optimo;
+                ganTotalAc += ganTotal;
 
-                grdSimulacion.Rows.Add(d, stockFacturas, TruncarNumero(rndTipoDemanda, 2), tipoDemanda, TruncarNumero(rndDemanda, 2), demandaDia, sobrantes, sobrantesAC, perdidas, perdidasAC, optimo, optimoAC);
+
+                grdSimulacion.Rows.Add(d, stockFacturas, TruncarNumero(rndTipoDemanda, 2), tipoDemanda, TruncarNumero(rndDemanda, 2), demandaDia, TruncarNumero(costoProduc, 2), TruncarNumero(gananVenta, 2), sobrantes, sobrantesAC, TruncarNumero(gananSobrante, 2), perdidas, perdidasAC, TruncarNumero(costoFaltante, 2), optimo, optimoAC, TruncarNumero(ganTotal, 2), TruncarNumero(ganTotalAc, 2));
 
             }
 
