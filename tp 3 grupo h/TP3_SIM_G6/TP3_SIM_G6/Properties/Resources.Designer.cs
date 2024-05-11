@@ -69,5 +69,15 @@ namespace TP3_SIM_G6.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_polina_tankilevitch_4828339 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-polina-tankilevitch-4828339", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

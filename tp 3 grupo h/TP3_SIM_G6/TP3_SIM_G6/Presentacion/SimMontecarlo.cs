@@ -33,7 +33,7 @@ namespace TP3_SIM_G6
             List<double> probAlta = new List<double> { 0.05, 0.1, 0.25, 0.3, 0.2, 0.1 };
             List<double> probMedia = new List<double> { 0.1, 0.2, 0.3, 0.25, 0.1, 0.05 };
             List<double> probBaja = new List<double> { 0.15, 0.25, 0.35, 0.15, 0.05, 0.05 };
-            List<string> tipoDemanda = new List<string> { "alta", "media", "baja" };
+            List<string> tipoDemanda = new List<string> { "Alta", "Media", "Baja" };
             List<double> cantDemanda = new List<double> { 36, 48, 60, 72, 84, 96 };
 
             DataTable probTipoDemanda = generarTablaProbabilidadesTipo(probTipo, tipoDemanda);
@@ -79,7 +79,7 @@ namespace TP3_SIM_G6
 
                 string tipoDemanda = BuscarTipoDemanda(probTipoDemanda, rndTipoDemanda);
 
-                if (tipoDemanda == "alta")
+                if (tipoDemanda == "Alta")
                 {
                     demandaDia = BuscarDemanda(probDemAlta, rndDemanda);
                     if (stockFacturas > demandaDia)
@@ -93,7 +93,7 @@ namespace TP3_SIM_G6
                     optimo = stockFacturas - sobrantes + perdidas;
 
                 }
-                else if (tipoDemanda == "media")
+                else if (tipoDemanda == "Media")
                 {
                     demandaDia = BuscarDemanda(probDemMedia, rndDemanda);
                     if (stockFacturas > demandaDia)
@@ -109,7 +109,7 @@ namespace TP3_SIM_G6
                 else
                 {
                     demandaDia = BuscarDemanda(probDemBaja, rndDemanda);
-                    if ( stockFacturas >  demandaDia)
+                    if (stockFacturas > demandaDia)
                     {
                         sobrantes = stockFacturas - demandaDia;
                     }
@@ -123,7 +123,7 @@ namespace TP3_SIM_G6
                 perdidasAC += perdidas;
                 optimoAC += optimo;
 
-                grdSimulacion.Rows.Add(d, stockFacturas, TruncarNumero(rndTipoDemanda,2) , tipoDemanda, TruncarNumero(rndDemanda,2) , demandaDia, sobrantes, sobrantesAC, perdidas, perdidasAC, optimo, optimoAC);
+                grdSimulacion.Rows.Add(d, stockFacturas, TruncarNumero(rndTipoDemanda, 2), tipoDemanda, TruncarNumero(rndDemanda, 2), demandaDia, sobrantes, sobrantesAC, perdidas, perdidasAC, optimo, optimoAC);
 
             }
 
@@ -212,7 +212,7 @@ namespace TP3_SIM_G6
             {
                 if (cantDemandas == (i - 1)) //es ultima demanda
                 {
-                    valores.Rows.Add( probabilidades[i], li, 0.99999, cantDemanda[i]);
+                    valores.Rows.Add(probabilidades[i], li, 0.99999, cantDemanda[i]);
                 }
                 else
                 {
