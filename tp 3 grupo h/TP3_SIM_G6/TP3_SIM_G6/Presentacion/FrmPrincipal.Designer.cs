@@ -39,7 +39,7 @@
             // 
             // btnSimular
             // 
-            btnSimular.BackColor = Color.Plum;
+            btnSimular.BackColor = Color.Thistle;
             btnSimular.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btnSimular.ForeColor = Color.White;
             btnSimular.Location = new Point(372, 392);
@@ -81,9 +81,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(255, 201);
             label4.Name = "label4";
-            label4.Size = new Size(581, 37);
+            label4.Size = new Size(579, 37);
             label4.TabIndex = 9;
-            label4.Text = "Trabajo práctico N°4 - Modelo Montecarlo";
+            label4.Text = "Trabajo práctico N°3 - Modelo Montecarlo";
             // 
             // groupBox1
             // 
