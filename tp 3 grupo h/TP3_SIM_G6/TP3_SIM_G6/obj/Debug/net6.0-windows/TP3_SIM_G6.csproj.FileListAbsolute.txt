@@ -1,0 +1,93 @@
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.exe
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.deps.json
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.runtimeconfig.json
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.dll
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.pdb
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.AssemblyReference.cache
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.FrmPrincipal.resources
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.SimMontecarlo.resources
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.Properties.Resources.resources
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.GenerateResource.cache
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfoInputs.cache
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfo.cs
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.CoreCompileInputs.cache
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.dll
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\refint\TP3_SIM_G6.dll
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.pdb
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.genruntimeconfig.cache
+C:\Users\Mari\Documents\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\ref\TP3_SIM_G6.dll
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.exe
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.deps.json
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.runtimeconfig.json
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.dll
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.pdb
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.AssemblyReference.cache
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.FrmPrincipal.resources
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.SimMontecarlo.resources
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.Properties.Resources.resources
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.GenerateResource.cache
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.GeneratedMSBuildEditorConfig.editorconfig
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfoInputs.cache
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfo.cs
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.CoreCompileInputs.cache
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.dll
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\refint\TP3_SIM_G6.dll
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.pdb
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.genruntimeconfig.cache
+D:\UTN\2023 - Cuarto\SIM\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\ref\TP3_SIM_G6.dll
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.exe
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.deps.json
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.runtimeconfig.json
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.dll
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.pdb
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.FrmPrincipal.resources
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.SimMontecarlo.resources
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.Properties.Resources.resources
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.GenerateResource.cache
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfoInputs.cache
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfo.cs
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.CoreCompileInputs.cache
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.dll
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\refint\TP3_SIM_G6.dll
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.pdb
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.genruntimeconfig.cache
+C:\Users\iara_\OneDrive\Documentos\GitHub\TP2_SIM_G6\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\ref\TP3_SIM_G6.dll
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.exe
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.deps.json
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.runtimeconfig.json
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.dll
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.pdb
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.FrmPrincipal.resources
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.SimMontecarlo.resources
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.Properties.Resources.resources
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.GenerateResource.cache
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.GeneratedMSBuildEditorConfig.editorconfig
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfoInputs.cache
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfo.cs
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.CoreCompileInputs.cache
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.dll
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\refint\TP3_SIM_G6.dll
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.pdb
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.genruntimeconfig.cache
+D:\Descargas\2024 utn\sim\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\ref\TP3_SIM_G6.dll
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.exe
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.deps.json
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.runtimeconfig.json
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.dll
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\bin\Debug\net6.0-windows\TP3_SIM_G6.pdb
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.AssemblyReference.cache
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.FrmPrincipal.resources
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.SimMontecarlo.resources
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.Properties.Resources.resources
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.GenerateResource.cache
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfoInputs.cache
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.AssemblyInfo.cs
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.csproj.CoreCompileInputs.cache
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.dll
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\refint\TP3_SIM_G6.dll
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.pdb
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\TP3_SIM_G6.genruntimeconfig.cache
+D:\Mari\Documents\gitHub repository\SIM_4K2_GH\tp 3 grupo h\TP3_SIM_G6\TP3_SIM_G6\obj\Debug\net6.0-windows\ref\TP3_SIM_G6.dll
