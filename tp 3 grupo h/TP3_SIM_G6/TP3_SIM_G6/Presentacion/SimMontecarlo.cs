@@ -63,7 +63,7 @@ namespace TP3_SIM_G6
                 Random rndDem = new Random();
                 double rndDemanda = rndDem.NextDouble();
 
-                
+
                 int stockFacturas = int.Parse(txtStock.Text.ToString());
                 if (stockFacturas % 12 != 0)
                 {
@@ -185,9 +185,10 @@ namespace TP3_SIM_G6
 
             }
 
-            //promedio optimo para 120 dias
-            double prom = optimoAC / 120;
-            txtPromOptimo.Text = prom.ToString();
+            //promedio optimo para 120 dias, cantidad de facturas óptima a producir por día
+            txtPromOptimo.Text = (optimoAC / 120).ToString();
+            // devuelve el último valor de la gananciaAC / cant de días = ganancia promedio por día con la oferta seleccionada
+            txtGananciaProm.Text = TruncarNumero((ganTotalAc / 120),2).ToString();
 
         }
 
@@ -293,6 +294,7 @@ namespace TP3_SIM_G6
         {
             grdSimulacion.Rows.Clear();
             txtPromOptimo.Text = "";
+            txtGananciaProm.Text = "";
         }
 
         private double TruncarNumero(double numero, int decimales)

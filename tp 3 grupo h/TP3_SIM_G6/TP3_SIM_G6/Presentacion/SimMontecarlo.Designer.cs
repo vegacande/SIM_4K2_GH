@@ -59,6 +59,8 @@
             label11 = new Label();
             btnReiniciar = new Button();
             btnIniciar = new Button();
+            label1 = new Label();
+            txtGananciaProm = new TextBox();
             ((System.ComponentModel.ISupportInitialize)grdSimulacion).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtStock).BeginInit();
@@ -279,6 +281,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(txtGananciaProm);
+            groupBox3.Controls.Add(label1);
             groupBox3.Controls.Add(txtPromOptimo);
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label11);
@@ -287,7 +291,7 @@
             groupBox3.Margin = new Padding(2, 3, 2, 3);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(2, 3, 2, 3);
-            groupBox3.Size = new Size(369, 181);
+            groupBox3.Size = new Size(369, 190);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
             groupBox3.Text = "Resultados";
@@ -295,7 +299,7 @@
             // txtPromOptimo
             // 
             txtPromOptimo.Enabled = false;
-            txtPromOptimo.Location = new Point(66, 96);
+            txtPromOptimo.Location = new Point(65, 78);
             txtPromOptimo.Margin = new Padding(2, 3, 2, 3);
             txtPromOptimo.Name = "txtPromOptimo";
             txtPromOptimo.Size = new Size(138, 28);
@@ -314,7 +318,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Montserrat Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(8, 56);
+            label11.Location = new Point(9, 45);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(360, 21);
@@ -356,6 +360,26 @@
             btnIniciar.Text = "Iniciar simulación";
             btnIniciar.UseVisualStyleBackColor = false;
             btnIniciar.Click += btnIniciar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Montserrat Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(0, 119);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(161, 21);
+            label1.TabIndex = 24;
+            label1.Text = "Ganancia promedio";
+            // 
+            // txtGananciaProm
+            // 
+            txtGananciaProm.Enabled = false;
+            txtGananciaProm.Location = new Point(65, 156);
+            txtGananciaProm.Margin = new Padding(2, 3, 2, 3);
+            txtGananciaProm.Name = "txtGananciaProm";
+            txtGananciaProm.Size = new Size(138, 28);
+            txtGananciaProm.TabIndex = 25;
             // 
             // SimMontecarlo
             // 
@@ -414,5 +438,7 @@
         private DataGridViewTextBoxColumn OptimoAC;
         private DataGridViewTextBoxColumn gananDia;
         private DataGridViewTextBoxColumn ganTotalACu;
+        private TextBox txtGananciaProm;
+        private Label label1;
     }
 }
