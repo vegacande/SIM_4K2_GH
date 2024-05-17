@@ -59,7 +59,6 @@
             label11 = new Label();
             btnReiniciar = new Button();
             btnIniciar = new Button();
-            prbSimulacion = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)grdSimulacion).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtStock).BeginInit();
@@ -358,21 +357,12 @@
             btnIniciar.UseVisualStyleBackColor = false;
             btnIniciar.Click += btnIniciar_Click;
             // 
-            // prbSimulacion
-            // 
-            prbSimulacion.Location = new Point(408, 49);
-            prbSimulacion.Margin = new Padding(2);
-            prbSimulacion.Name = "prbSimulacion";
-            prbSimulacion.Size = new Size(1413, 30);
-            prbSimulacion.TabIndex = 13;
-            // 
             // SimMontecarlo
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1844, 693);
-            Controls.Add(prbSimulacion);
             Controls.Add(btnIniciar);
             Controls.Add(btnReiniciar);
             Controls.Add(groupBox3);
@@ -406,7 +396,6 @@
         private TextBox txtPromOptimo;
         private NumericUpDown txtStock;
         private Label lbl;
-        private ProgressBar prbSimulacion;
         private DataGridViewTextBoxColumn dia;
         private DataGridViewTextBoxColumn Oferta;
         private DataGridViewTextBoxColumn rndTipo;
