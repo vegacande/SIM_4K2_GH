@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TP3_SIM_G6.LogicaNegocio;
 
 namespace TP3_SIM_G6
 {
@@ -16,7 +15,6 @@ namespace TP3_SIM_G6
         public SimMontecarlo()
         {
             InitializeComponent();
-            //setearValoresPorDefecto();
         }
 
 
@@ -26,8 +24,6 @@ namespace TP3_SIM_G6
         /// 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            prbSimulacion.Maximum = 120;//int.Parse(txtN.Text.ToString()) + 1;
-            prbSimulacion.Value = prbSimulacion.Minimum; // Asignamos valor inicial a ProgressBar (0)
 
             List<double> probTipo = new List<double> { 0.35, 0.4, 0.25 };
             List<double> probAlta = new List<double> { 0.05, 0.1, 0.25, 0.3, 0.2, 0.1 };
@@ -67,9 +63,14 @@ namespace TP3_SIM_G6
                 Random rndDem = new Random();
                 double rndDemanda = rndDem.NextDouble();
 
-
+                
                 int stockFacturas = int.Parse(txtStock.Text.ToString());
-
+                if (stockFacturas % 12 != 0)
+                {
+                    MessageBox.Show("Debe ingresar un número de facturas válido (debe corresponder a x cantidad de docenas)");
+                    limpiarCampos();
+                    break;
+                }
                 double sobrantes = 0;
                 double perdidas = 0;
                 double optimo = 0;
@@ -292,7 +293,6 @@ namespace TP3_SIM_G6
         {
             grdSimulacion.Rows.Clear();
             txtPromOptimo.Text = "";
-            prbSimulacion.Value = 0;
         }
 
         private double TruncarNumero(double numero, int decimales)
