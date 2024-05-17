@@ -188,7 +188,7 @@ namespace TP3_SIM_G6
             //promedio optimo para 120 dias, cantidad de facturas óptima a producir por día
             txtPromOptimo.Text = (optimoAC / 120).ToString();
             // devuelve el último valor de la gananciaAC / cant de días = ganancia promedio por día con la oferta seleccionada
-            txtGananciaProm.Text = TruncarNumero((ganTotalAc / 120),2).ToString();
+            txtGananciaProm.Text = TruncarNumero((ganTotalAc / 120), 2).ToString();
 
         }
 
