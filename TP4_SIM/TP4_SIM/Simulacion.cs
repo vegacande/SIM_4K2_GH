@@ -93,15 +93,44 @@ namespace TP4_SIM
             dgvColas.Columns.Add("Tiempo_llegada_envios", "Tiempo de Llegada venta");
             dgvColas.Columns.Add("Hora_llegada_venta", "Proxima Llegada");
 
-            dgvColas.Columns.Add("RND_Atencion", "RND");
-            dgvColas.Columns.Add("Tiempo_Atencion", "Tiempo de Atencion");
+            dgvColas.Columns.Add("RND_FinAtencion", "RND");
+            dgvColas.Columns.Add("Tiempo_FinAtencion", "Tiempo Fin Atencion");
             dgvColas.Columns.Add("Fin_Atencion", "Fin de Atencion");
 
-            //faltan fin y empleados
+            dgvColas.Columns.Add("RND_FinEnvios", "RND");
+            dgvColas.Columns.Add("Tiempo_FinEnvios", "Tiempo Fin Envios");
+            dgvColas.Columns.Add("Fin_Envios", "Fin de Envios");
 
-            dgvColas.Columns.Add("Estado_EmpleadoA", "Estado EmpleadoA");
-            dgvColas.Columns.Add("Cola_EmpleadoA", "Cola EmpleadoA");
-            dgvColas.Columns.Add("Cantidad_ClientesA", "Cant. ClientesA");
+            dgvColas.Columns.Add("RND_FinPostales", "RND");
+            dgvColas.Columns.Add("Tiempo_FinPostales", "Tiempo Fin Postales");
+            dgvColas.Columns.Add("Fin_Postales", "Fin de Postales");
+
+            dgvColas.Columns.Add("RND_FinReclamos", "RND");
+            dgvColas.Columns.Add("Tiempo_FinReclamos", "Tiempo Fin Reclamos");
+            dgvColas.Columns.Add("Fin_Reclamos", "Fin de ReclamosReclamos");
+
+            dgvColas.Columns.Add("RND_FinVenta", "RND");
+            dgvColas.Columns.Add("Tiempo_FinVenta", "Tiempo Fin Venta");
+            dgvColas.Columns.Add("Fin_Venta", "Fin de Venta");
+
+            dgvColas.Columns.Add("Estado_EmpleadoA", "Estado Empleado Atencion");
+            dgvColas.Columns.Add("Cola_EmpleadoA", "Cola Empleado Atencion");
+            dgvColas.Columns.Add("Cantidad_ClientesA", "Cant. Clientes Atencion");
+
+            dgvColas.Columns.Add("Estado_EmpleadoE", "Estado Empleado Envios");
+            dgvColas.Columns.Add("Cola_EmpleadoE", "Cola Empleado Envios");
+            dgvColas.Columns.Add("Cantidad_ClientesE", "Cant. Clientes Envios");
+
+            dgvColas.Columns.Add("Estado_EmpleadoP", "Estado Empleado Postales");
+            dgvColas.Columns.Add("Cola_EmpleadoP", "Cola Empleado Postales");
+            dgvColas.Columns.Add("Cantidad_ClientesP", "Cant. Clientes Postales");
+
+            //reclamos y ventas no tienen definido cantidad clientes (no hace falta)
+            dgvColas.Columns.Add("Estado_EmpleadoR", "Estado Empleado Reclamos");
+            dgvColas.Columns.Add("Cola_EmpleadoR", "Cola Empleado Reclamos");
+
+            dgvColas.Columns.Add("Estado_EmpleadoV", "Estado Empleado Venta");
+            dgvColas.Columns.Add("Cola_EmpleadoV", "Cola Empleado Venta");
 
             dgvColas.Columns.Add("Cantidad_Total_Clientes", "Cantidad Total Clientes");
 
@@ -109,24 +138,24 @@ namespace TP4_SIM
             var contador = 0;
             bool overflow = false;
 
-            foreach (Cliente c in resultadosSimulacion[resultadosSimulacion.Length - 1].ListaClientes)
-            {
-                try
-                {
-                    dgvColas.Columns.Add("estado_CA" + i.ToString(), "Estado Cliente" + i.ToString());
-                    i++;
-                    contador++;
-                }
-                catch (Exception ex)
-                {
-                    overflow = true;
-                    dgvColas.Columns.Remove("estado_CA" + i.ToString());
-                }
-                if (overflow)
-                {
-                    break;
-                }
-            }
+            //foreach (Cliente c in resultadosSimulacion[resultadosSimulacion.Length - 1].ListaClientes)
+            //{
+            //    try
+            //    {
+            //        dgvColas.Columns.Add("estado_CA" + i.ToString(), "Estado Cliente" + i.ToString());
+            //        i++;
+            //        contador++;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        overflow = true;
+            //        dgvColas.Columns.Remove("estado_CA" + i.ToString());
+            //    }
+            //    if (overflow)
+            //    {
+            //        break;
+            //    }
+            //}
             i = 1;
             if (!overflow)
             {
@@ -157,7 +186,6 @@ namespace TP4_SIM
                 dgvColas.Rows.Add(ve.ToLista(cantidadClientesTotales, contador));
             }
             dgvColas.ResumeLayout(false);
-
 
         }
 

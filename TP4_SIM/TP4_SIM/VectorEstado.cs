@@ -116,17 +116,17 @@ namespace TP4_SIM
             this.Llegada_Venta = new Llegada_venta(ve.Llegada_Venta, distribuciones[5], keep);
 
             //!!!!!!!!!!!!!!!!!PROBLEMA DEL FUTURO: para los fin tal vez solo haga falta el primer parametro
-            this.Fin_atencion_atencion = new Fin_atencion_atencion(ve.Fin_atencion_atencion, distribuciones[6], keep);
-            this.Fin_atencion_envio = new Fin_atencion_envio(ve.Fin_atencion_envio, distribuciones[7], keep);
-            this.fin_Atencion_Postales = new Fin_atencion_postales(ve.fin_Atencion_Postales, distribuciones[8], keep);
-            this.fin_Atencion_Reclamos = new Fin_atencion_reclamos(ve.fin_Atencion_Reclamos, distribuciones[9], keep);
-            this.fin_Atencion_Venta = new Fin_atencion_venta(ve.fin_Atencion_Venta, distribuciones[10], keep);
+            //this.Fin_atencion_atencion = new Fin_atencion_atencion(ve.Fin_atencion_atencion, distribuciones[6], keep);
+            //this.Fin_atencion_envio = new Fin_atencion_envio(ve.Fin_atencion_envio, distribuciones[7], keep);
+            //this.fin_Atencion_Postales = new Fin_atencion_postales(ve.fin_Atencion_Postales, distribuciones[8], keep);
+            //this.fin_Atencion_Reclamos = new Fin_atencion_reclamos(ve.fin_Atencion_Reclamos, distribuciones[9], keep);
+            //this.fin_Atencion_Venta = new Fin_atencion_venta(ve.fin_Atencion_Venta, distribuciones[10], keep);
 
-            //this.Fin_atencion_atencion = new Fin_atencion_atencion(ve.Fin_atencion_atencion);
-            //this.Fin_atencion_envio = new Fin_atencion_envio(ve.Fin_atencion_envio);
-            //this.fin_Atencion_Postales = new Fin_atencion_postales(ve.fin_Atencion_Postales);
-            //this.fin_Atencion_Reclamos = new Fin_atencion_reclamos(ve.fin_Atencion_Reclamos);
-            //this.fin_Atencion_Venta = new Fin_atencion_venta(ve.fin_Atencion_Venta);
+            this.Fin_atencion_atencion = new Fin_atencion_atencion(ve.Fin_atencion_atencion);
+            this.Fin_atencion_envio = new Fin_atencion_envio(ve.Fin_atencion_envio);
+            this.fin_Atencion_Postales = new Fin_atencion_postales(ve.fin_Atencion_Postales);
+            this.fin_Atencion_Reclamos = new Fin_atencion_reclamos(ve.fin_Atencion_Reclamos);
+            this.fin_Atencion_Venta = new Fin_atencion_venta(ve.fin_Atencion_Venta);
 
             this.Empleado_atencion = new Empleado_atencion();
             this.Empleado_Envio = new Empleado_envio();
@@ -203,12 +203,15 @@ namespace TP4_SIM
 
             cadena.Add(this.Empleado_atencion.Estado);
             cadena.Add(this.Empleado_atencion.Cola.ToString());
+            cadena.Add(this.Metricas.cantidadClientesAtencion.ToString());
 
             cadena.Add(this.Empleado_Envio.Estado);
             cadena.Add(this.Empleado_Envio.Cola.ToString());
+            cadena.Add(this.Metricas.cantidadClientesEnvios.ToString());
 
             cadena.Add(this.Empleado_Postales.Estado);
             cadena.Add(this.Empleado_Postales.Cola.ToString());
+            cadena.Add(this.Metricas.cantidadClientesPostales.ToString());
 
             cadena.Add(this.Empleado_Reclamos.Estado);
             cadena.Add(this.Empleado_Reclamos.Cola.ToString());
@@ -216,10 +219,8 @@ namespace TP4_SIM
             cadena.Add(this.Empleado_Venta.Estado);
             cadena.Add(this.Empleado_Venta.Cola.ToString());
 
-           
-            cadena.Add(this.Metricas.cantidadClientesAtencion.ToString());
-            cadena.Add(this.Metricas.cantidadClientesEnvios.ToString());
-            cadena.Add(this.Metricas.cantidadClientesPostales.ToString());
+            cadena.Add(this.Metricas.cantidadTotalClientes.ToString());
+
 
             var j = -1;
             foreach (Cliente cli in ListaClientes)
